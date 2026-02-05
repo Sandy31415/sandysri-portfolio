@@ -1,1 +1,194 @@
-<h1>Hello World Wide Web!</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">  
+    
+    <style>
+      
+      body{
+        background-color:#EBDEFF;
+        padding: 30px;
+      }
+      .page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+      .topnav{
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'Arsenal'; 
+        margin-right:10px;
+        margin-top: 10px;
+      }
+      
+      .topnav a {
+  
+  color: #282530;
+  text-align: center;
+  padding: 14px 16px;
+  
+  text-decoration: none;
+  font-size: 17px;
+}
+      h1 {
+  font-family: "Lora";
+  font-weight: 400;
+  font-size: clamp(2.3rem, 6vw, 4rem);
+  margin-bottom: 0.25rem;
+}
+h2 {
+  font-family: "Lora";
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+      p {
+  max-width: 520px;
+  line-height: 1.6;
+  font-size: 1rem;
+  font-family: "Arsenal";
+}
+     #works {
+  display: block;
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.02em;
+       font-family: "Arsenal";
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  
+  color: #615689;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  color: #615689;
+}
+      
+   .project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  min-height: 360px;
+  margin: 3rem auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+      
+     .project-text {
+  background-color: #6b6294;
+  color: white;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.project-text h3 {
+  font-family: "Lora";
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+.project-text p {
+  color: #f2f1f7;
+  max-width: none;
+}
+
+.project-image {
+  background-color: #4a3f3f; /* placeholder */
+}
+      
+      
+      project-card.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-card.reverse .project-text {
+  order: 2;
+}
+
+.project-card.reverse .project-image {
+  order: 1;
+}
+      
+      
+      @media (max-width: 768px) {
+  .topnav {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .project-text {
+    padding: 2rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+    </style>
+    
+</head>
+  <body>
+    <div class="page">
+      
+   
+  <div class="topnav">
+  
+  <a href="#news">works</a>
+  <a href="#contact">contact</a>
+  <a href="#about">resume</a>
+</div>
+    <h1>
+      Sandy Srinivasan
+    </h1>
+    <h2>
+      Designer, Artist
+    </h2>
+    <p>
+      Versatile designer with interests spanning graphic design, UX design, and Product design. 
+    </p>
+    <br>
+    <br>
+    <span id="works"> Selected Work</span>
+    
+    <div class="project-card">
+  <div class="project-text">
+    <h3>Magazine: My Design Journey</h3>
+    <p>Brief description about the project</p>
+    <p class="tools">Tools used: Adobe InDesign, Illustrator, Photoshop</p>
+  </div>
+
+  <div class="project-image">
+    <!-- image goes here -->
+  </div> 
+</div>
+    
+    <div class="project-card reverse">
+  <div class="project-image"></div>
+  <div class="project-text"></div>
+</div>
+     </div>
+  </body>
+</html>

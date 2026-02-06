@@ -65,9 +65,7 @@ h2 {
   margin-bottom: 0;
 }
 
-.intro-section {
-  margin-bottom: 8rem;
-}
+
 
      #works {
   display: block;
@@ -172,7 +170,23 @@ h2 {
 .allwork:hover {
   color: #615689;
 }
-      
+     .container {
+       margin: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.column {
+  padding: 15px;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+} 
       
       @media (max-width: 768px) {
   .topnav {
@@ -197,14 +211,7 @@ h2 {
   p {
     font-size: 0.95rem;
   }
-  
-  .intro-section {
-    margin-bottom: 5rem;
-  }
-  
-  #works {
-    margin: 4rem 0 2rem;
-  }
+
 }
 
     </style>
@@ -221,19 +228,17 @@ h2 {
   <a href="#about">resume</a>
 </div>
 
-    <div class="intro-section">
     <h1>
-      Sandy Srinivasan
+     Selected Works
     </h1>
-    <h2>
-      Designer, Artist
-    </h2>
-    <p>
-      Versatile designer with interests spanning graphic design, UX design, and Product design. 
-    </p>
-    </div>
+  
+  
     
-    <span id="works">Selected work</span>
+ <div class="container">
+   
+<div class="column">
+  
+ 
     
     <div class="project-card">
   <div class="project-text">
@@ -258,7 +263,50 @@ h2 {
   </div>
 </div>
 
-<a href="all-works.html" class="allwork">Check out my full list of work →</a>
+   <div class="project-card">
+  <div class="project-text">
+    <h3>Scented Essentials: Icon Set</h3>
+    <p>Brief Description about the project</p>
+    <p class="tools">Tools used: Adobe Illustrator</p>
+  </div>
+
+  <div class="project-image">
+    <img src="perfume.png" alt="magazine coverpage">
+  </div> 
+</div>
+    </div>
+    
+   <div class="column">
+     
+   
+   
+   <div class="project-card reverse">
+  <div class="project-image">
+    <img src="poster1.png" alt="homepage of app">
+  </div>
+  <div class="project-text">
+    <h3>Poster Gallery</h3>
+    <p>Brief Description about the project</p>
+    <p class="tools">Tools used: Adobe Photoshop, Adobe Firefly, Adobe Illustrator</p>
+  </div>
+</div>
+   
+   
+   <div class="project-card">
+  <div class="project-text">
+    <h3>Fine Arts </h3>
+    <p>Brief Description about the project</p>
+    <p class="tools">Tools used: Acrylic paint, watercolor, pen and ink</p>
+  </div>
+
+  <div class="project-image">
+    <img src="fineart2.png" alt="magazine coverpage">
+  </div> 
+</div>
+   </div>
+   
+ </div>
+
 
      </div>
   </body>

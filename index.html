@@ -69,14 +69,20 @@ h2 {
 .intro-section {
   margin-bottom: 8rem;
 }
-
-     #works {
-  display: block;
+.works-section {
   text-align: center;
   margin: 6rem 0 3rem;
+}
+
+#works {
   font-size: 1.8rem;
   letter-spacing: 0.02em;
   font-family: "Arsenal";
+  margin-bottom: 0.5rem;
+}
+
+#downarrow {
+  font-size: 1.5rem;
 }
 
 /* Change the color of links on hover */
@@ -90,6 +96,7 @@ h2 {
   color: #615689;
 }
       
+   
    .project-card {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -239,9 +246,11 @@ h2 {
     </p>
     </div>
     
-    <span id="works">Selected Work</span>
-    <div class="container">
-      
+    <div class="works-section">
+  <h2 id="works">Selected Work</h2>
+  <div id="downarrow">&#8595;</div>
+</div>
+
     
     <div class="project-card">
   <div class="project-text">

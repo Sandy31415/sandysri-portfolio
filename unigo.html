@@ -242,52 +242,99 @@ h2 {
   <a href="#about">resume</a>
 </div>
 
-    <div class="intro-section">
+  
     <h1>
-      Sandy Srinivasan
+      UniGo: A Campus Navigation App
     </h1>
-    <h2>
-      Designer, Artist
-    </h2>
-    <p>
-      Versatile designer with interests spanning graphic design, UX design, and Product design. 
-    </p>
-    </div>
-    
-    <div class="works-section">
-  <h2 id="works">Selected Work</h2>
-  <div id="downarrow">&#8595;</div>
-</div>
+   <div class="container">
+        <div class="column">
+          <div class="phone-frame">
+            <div class="phone-notch">
+              <div class="phone-speaker"></div>
+              <div class="phone-camera"></div>
+            </div>
+        
+            <div class="screen" id="screen">
+              <div class="screen-content" id="screenContent">
+                <!-- Page 0: Login -->
+                <div class="page active" data-page="0">
+                  <img src="map1.png" alt="login page of app" class="page-image">
+                </div>
 
-    <a href="magazine.html">
-    <div class="project-card">
-  <div class="project-text">
-    <h3>Magazine: My Design Journey</h3>
-    <p>Brief Description about the project</p>
-    <p class="tools">Tools used: Adobe InDesign, Adobe Illustrator, Adobe Photoshop</p>
-  </div>
+                <!-- Page 1: Homepage -->
+                <div class="page" data-page="1">
+                  <img src="map2.png" alt="sign in page of app" class="page-image">
+                </div>
 
-  <div class="project-image">
-    <img src="page1.png" alt="magazine coverpage">
-  </div> 
-</div>
-      </a>
-    <a href="unigo.html">
-    <div class="project-card reverse">
-  <div class="project-image">
-    <img src="map1.png" alt="homepage of app">
-  </div>
-  <div class="project-text">
-    <h3>UniGo: A Wayfinding App Prototype</h3>
-    <p>Brief Description about the project</p>
-    <p class="tools">Tools used: Figma</p>
-  </div>
-</div>
-      </a>
-      
+                <!-- Page 2: Profile -->
+                <div class="page" data-page="2">
+                  <img src="map3.png" alt="toggle for modes" class="page-image">
+                </div>
+
+                <!-- Page 3: Bookmarks -->
+                <div class="page" data-page="3">
+                  <img src="map4.png" alt="homepage" class="page-image">
+                </div>
+                
+                <!-- Page 4: Recipe -->
+                <div class="page" data-page="4">
+                  <img src="map5.png" alt="schedule page" class="page-image">
+                </div>
+                        
+                <!-- Page 5: Camera 1 -->
+                <div class="page" data-page="5">
+                  <img src="map6.png" alt="indoor navigation interface" class="page-image">
+                </div>
+
+                <!-- Page 6: Camera 2 -->
+                <div class="page" data-page="6">
+                  <img src="map7.png" alt="AR navigation interface" class="page-image">
+                </div>
+                
+                <div class="page" data-page="7">
+                  <img src="map8.png" alt="profile page" class="page-image">
+                </div>
+                
+                <div class="page" data-page="8">
+                  <img src="map9.png" alt="toggles for accessibility" class="page-image">
+                </div>
+                
+                <div class="page" data-page="9">
+                  <img src="map10.png" alt="saved routes page" class="page-image">
+                </div>
+                
+              </div>
+            </div>
+        
+            <div class="navigation">
+              <button class="nav-btn" id="prevBtn">← Prev</button>
+              <div class="page-indicator">
+                <span id="currentPage">1</span> / <span id="totalPages">7</span>
+              </div>
+              <button class="nav-btn" id="nextBtn">Next →</button>
+            </div>
+          </div>
         </div>
+          
+        <div class="column">
+          <div class="description">
+            <p>
+          Navigation on university campuses is an often-overlooked challenge. A 2025 national survey found that 90% of first-year students have experienced getting lost on campus, a trend echoed in our user research at the University of Waterloo. Students reported feeling disoriented when navigating complex tunnel and bridge systems, winding hallways, and unofficial shortcuts—issues that existing tools like Google Maps and Apple Maps fail to address. To solve this, our team created UniGo, an app tailored to campus navigation. With indoor navigation, departure-time prompts, standard and AR navigation modes, and robust accessibility customization, UniGo empowers students to reach their destinations confidently and on time.
+              <br>
+              <br>
+              <span id="small"> Figma, 2026</span>
+            </p>
+          </div>
+          <span id="figma">
+            <a href="https://www.figma.com/proto/1HKIDpbCLjMLv7ov7J8bix/Group-2_Milestone-2-_High-Fidelity-Prototype?node-id=928-1633&p=f&t=qagIv7gYdGYMsY86-1&scaling=scale-down&content-scaling=fixed&page-id=928%3A1625&starting-point-node-id=928%3A1633&show-proto-sidebar=1" target="_blank">Click here to check out the interactive prototype!</a>
+          </span>
+          <span id="drivelink">
+            <a href="https://drive.google.com/file/d/1sLfWPrRGwPxUd6NeIquhFqZQjG4ddGRY/view?usp=sharing" target="_blank">Click here to check out the full report!</a>
+          </span>
+        </div>
+      </div>
+    </div>
 
-<a href="all-works.html" class="allwork">Check out my full list of work →</a>
 
      </div>
   </body>

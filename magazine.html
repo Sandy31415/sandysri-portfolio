@@ -49,21 +49,26 @@
   font-size: clamp(2.7rem, 6vw, 6rem);
   margin-bottom: 0.25rem;
   margin-top: 0;
+  margin-left: 30px;
 }
 h2 {
   font-family: "Lora";
   font-weight: 400;
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  margin-top: 30pxs;
+  margin-top: 30px;
+  margin-left:30px;
 }
       p {
-  max-width: 520px;
+ 
   line-height: 1.6;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: "Arsenal";
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 60px;
+  max-width: 700px;
+  margin-left: 30px;
+
 }
 
 .intro-section {
@@ -79,6 +84,9 @@ h2 {
   letter-spacing: 0.02em;
   font-family: "Arsenal";
   margin-bottom: 0.5rem;
+  margin-top:80px;
+  margin-left: 30px;
+  
 }
 
 #downarrow {
@@ -154,64 +162,240 @@ h2 {
   display: block;
 }
       
-      .project-card.reverse {
-  grid-template-columns: 1fr 1fr;
+/* MAGAZINE LAYOUT - Desktop */
+
+.magazine-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+  margin: 40px auto;
+  min-height: 550px;
+  width: 100%;
+  max-width: 1000px;
+  gap: 30px;
+  position: relative;
 }
 
-.project-card.reverse .project-text {
-  order: 2;
+.magazine {
+  width: 800px;
+  height: 550px;
+  position: relative;
+  display: flex;
+  transform-style: preserve-3d;
+  flex-shrink: 0;
 }
 
-.project-card.reverse .project-image {
-  order: 1;
+.book-page {
+  width: 400px;
+  height: 550px;
+  position: absolute;
+  background: white;
+  transform-origin: left center;
+  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+  overflow: hidden;
+  backface-visibility: hidden;
 }
 
-.allwork {
-  display: block;
-  text-align: left;
-  margin: 5rem 0 4rem;
-  font-family: "Arsenal";
+.book-page:nth-child(1) { z-index: 8; left: 0; }
+.book-page:nth-child(2) { z-index: 7; left: 0; }
+.book-page:nth-child(3) { z-index: 6; left: 0; }
+.book-page:nth-child(4) { z-index: 5; left: 0; }
+.book-page:nth-child(5) { z-index: 4; left: 0; }
+.book-page:nth-child(6) { z-index: 3; left: 0; }
+.book-page:nth-child(7) { z-index: 2; left: 0; }
+
+.book-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.book-page.flipped {
+  transform: rotateY(-180deg);
+  pointer-events: none;
+}
+
+.back-page {
+  width: 400px;
+  height: 550px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: white;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 1;
+}
+      .descript{
+         display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center;  
+      }
+.back-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+      
+      .process {
+        margin-top:20px;
+      }
+      
+      .process img{
+        max-width:200px;
+        margin: 20px;
+      }
+
+/* CONTROLS */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+}
+
+button.controls {
+  padding: 0;  /* Remove padding - it makes circles into ovals */
+  background: #615689;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
   font-size: 1.5rem;
-  color: #282530;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  font-family: 'Arsenal', sans-serif;
+  transition: all 0.3s;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.allwork:hover {
-  color: #615689;
+button.controls:hover:not(:disabled) {
+  background: #4e4670;
+  transform: scale(1.1);
 }
-      
-      
-      @media (max-width: 768px) {
+
+button.controls:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* MOBILE STACK */
+
+@media (max-width: 1200px) {
+  .magazine {
+    transform: scale(0.9);
+    transform-origin: center center;
+  }
+  
+  .magazine-showcase {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 968px) {
+  .magazine-showcase {
+    perspective: none;
+    padding: 0;
+    min-height: auto;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .magazine {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    position: relative;
+    transform: none;
+    transform-style: flat;
+    margin: 0 auto;
+  }
+
+  .book-page {
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 0 !important;
+    transform: none !important;
+    transform-origin: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    margin-bottom: 20px;
+    cursor: default;
+    display: none;
+  }
+
+  .book-page.active-mobile {
+    display: block;
+  }
+
+  .book-page.flipped {
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .back-page {
+    width: 100%;
+    height: auto;
+    position: relative;
+    right: auto;
+    display: none;
+  }
+
+  .back-page.active-mobile {
+    display: block;
+  }
+
   .topnav {
     justify-content: center;
     gap: 1rem;
   }
 
-.project-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 800px;
-  height: 360px;
-  margin: 3rem auto;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-  .project-text {
-    padding: 2rem;
+  .project-card {
+    height: 360px;
   }
 
   p {
     font-size: 0.95rem;
   }
-  
+
   .intro-section {
     margin-bottom: 5rem;
   }
-  
+
   #works {
     margin: 4rem 0 2rem;
+  }
+  
+  .controls {
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+  
+  .controls button {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 
@@ -241,10 +425,125 @@ h2 {
    <h2>
      My evolution as a designer
       </h2>
-   
+   <p>
+     
+      <b> Challenge:</b> Create a magazine chronicling your experience in first year in the GBDA program.
+     <br><b>Tools used: </b>Adobe Indesign, Adobe Photoshop, Adobe Illustrator
+     <br><b> Timeframe: </b>April 2025 
+   </p>
+     
     
- 
 
-     </div>
+
+<div class="magazine-showcase">
+  <button class="controls" id="prevBtn">←</button>
+  
+  <div class="magazine">
+    <!-- Flippable pages (pages 1-7) -->
+    <div class="book-page" data-page="1"><img src="page1.png" alt="Page 1"></div>
+    <div class="book-page" data-page="2"><img src="page2.png" alt="Page 2"></div>
+    <div class="book-page" data-page="3"><img src="page3.png" alt="Page 3"></div>
+    <div class="book-page" data-page="4"><img src="page4.png" alt="Page 4"></div>
+    <div class="book-page" data-page="5"><img src="page5.png" alt="Page 5"></div>
+    <div class="book-page" data-page="6"><img src="page6.png" alt="Page 6"></div>
+    <div class="book-page" data-page="7"><img src="page7.png" alt="Page 7"></div>
+
+    <!-- Static back page (page 8, always visible on right) -->
+    <div class="back-page">
+      <img src="page8.png" alt="Page 8">
+    </div>
+  </div>
+  
+  <button class="controls" id="nextBtn">→</button>
+</div>
+
+<div class="descript">
+  
+      
+  <p>
+    This magazine was created as part of a school project and features original photography captured throughout the city of Waterloo. It documents my experience as a first-year student in the GBDA program, exploring themes of exploration, growth, and hope for the future. <br>
+    
+    The design incorporates bubbly, rounded typography and bright shades of blue and purple to reflect the optimism I felt toward the end of the year. I chose a less traditional layout approach, weaving images around and between blocks of text, to reinforce the idea of exploration and winding, unexpected paths.
+  </p></div>
+  
+    <span id="works"> Process Work</span>
+</div>
+  
+    <div id="process">
+      
+      
+      
+    </div>
+    
+
+<script>
+      let currentPage = 0;
+      const pages = document.querySelectorAll('.book-page');
+      const backPage = document.querySelector('.back-page');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+
+      function isMobile() {
+        return window.innerWidth <= 968;
+      }
+
+      function updateButtons() {
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage === pages.length;
+      }
+
+      function updateMobileView() {
+        if (isMobile()) {
+          // Remove all active classes
+          pages.forEach(p => p.classList.remove('active-mobile'));
+          backPage.classList.remove('active-mobile');
+
+          // Show current page
+          if (currentPage < pages.length) {
+            pages[currentPage].classList.add('active-mobile');
+          } else {
+            backPage.classList.add('active-mobile');
+          }
+        }
+      }
+
+      function flipPage(direction) {
+        if (direction === 'next' && currentPage < pages.length) {
+          if (!isMobile()) {
+            pages[currentPage].classList.add('flipped');
+          }
+          currentPage++;
+        } else if (direction === 'prev' && currentPage > 0) {
+          currentPage--;
+          if (!isMobile()) {
+            pages[currentPage].classList.remove('flipped');
+          }
+        }
+        updateButtons();
+        updateMobileView();
+      }
+
+      nextBtn.addEventListener('click', () => flipPage('next'));
+      prevBtn.addEventListener('click', () => flipPage('prev'));
+
+      // Desktop: click to flip
+      pages.forEach((page, index) => {
+        page.addEventListener('click', () => {
+          if (!isMobile() && index === currentPage) {
+            flipPage('next');
+          }
+        });
+      });
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        updateMobileView();
+      });
+
+      // Initialize
+      updateButtons();
+      updateMobileView();
+    </script>
+
   </body>
 </html>

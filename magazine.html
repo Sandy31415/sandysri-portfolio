@@ -24,24 +24,33 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 2rem 1.5rem;
+}    .topnav {
+  display: flex;
+  justify-content: space-between;  /* pushes items apart */
+  align-items: center;
+  font-family: 'Arsenal';
+  margin: 10px 10px 3rem 10px;
 }
-      .topnav{
-        display: flex;
-        justify-content: flex-end;
-        font-family: 'Arsenal'; 
-        margin-right:10px;
-        margin-top: 10px;
-        margin-bottom: 3rem;
-      }
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
       
-      .topnav a {
-  
+      a{
+        text-decoration: None;
+      }
+      .back-btn {
+  font-size: 2em;   /* slightly bigger */
+  padding: 0 12px;
   color: #282530;
-  text-align: center;
-  padding: 14px 16px;
-  
   text-decoration: none;
-  font-size: 17px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #615689;
+  transform: translateX(-3px);
 }
       h1 {
   font-family: "Lora";
@@ -412,11 +421,14 @@ button.controls:disabled {
     <div class="page">
       
    
-  <div class="topnav">
-  
-  <a href="all-works.html">works</a>
-  <a href="#contact">contact</a>
+<div class="topnav">
+  <a href="all-works.html" class="back-btn">&#8249;</a>
+
+  <div class="nav-links">
+    <a href="all-works.html">works</a>
+    <a href="#contact">contact</a>
     <a href="https://drive.google.com/file/d/1L8sqHMsDxPt3LKfOW5OT71EavjOhv48e/view?usp=share_link" target="_blank">resume</a>
+  </div>
 </div>
 
    

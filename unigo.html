@@ -211,6 +211,72 @@ max-width: 330px;
     max-width: 500px;
     margin: 20px;
   }
+  
+  
+  /* MODAL STYLES */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 37, 48, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal {
+  background: #FDF7E4;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  font-family: "Arsenal";
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #282530;
+}
+
+.close-btn:hover {
+  color: #615689;
+}
+
+.modal .contact-card {
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #CAA9FF 0%, #8C63CD 100%);
+  border-radius: 10px;
+  color: white;
+}
+
 
 /* MOBILE */
 @media(max-width:768px){
@@ -242,7 +308,8 @@ max-width: 330px;
 
   <div class="nav-links">
     <a href="all-works.html">works</a>
-    <a href="#contact">contact</a>
+   <a href="#" id="contactLink">contact</a>
+
     <a href="https://drive.google.com/file/d/1L8sqHMsDxPt3LKfOW5OT71EavjOhv48e/view?usp=share_link" target="_blank">resume</a>
   </div>
 </div>
@@ -329,6 +396,22 @@ max-width: 330px;
          
   </span>
   </div>
+  <!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <button class="close-btn" id="closeModal">&times;</button>
+    <h3>Connect With Me</h3>
+
+    <div class="contact-card">
+      💼 <a href="#">linkedin.com/in/sandy-srinivasan</a>
+    </div>
+
+    <div class="contact-card">
+      ✉️ <a href="#">sandysri0711@gmail.com</a>
+    </div>
+  </div>
+</div>
+
 <script>
 const pages = document.querySelectorAll(".screen-page");
 const prevBtn = document.getElementById("prevBtn");
@@ -360,6 +443,29 @@ nextBtn.addEventListener("click",()=>{
 });
 
 update();
+  
+  
+  
+  const contactLink = document.getElementById("contactLink");
+const modal = document.getElementById("contactModal");
+const closeModal = document.getElementById("closeModal");
+
+contactLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  modal.classList.add("active");
+});
+
+closeModal.addEventListener("click", function() {
+  modal.classList.remove("active");
+});
+
+// Close when clicking outside modal
+modal.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
+
 </script>
 
 </body>

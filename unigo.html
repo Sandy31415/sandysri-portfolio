@@ -10,19 +10,22 @@
 
 body{
   background-color:#EBDEFF;
-  margin: 30px;
+  margin: 0;
+  padding: 30px;
   font-family: "Arsenal";
+  box-sizing: border-box;
 }
-     .mainpage {
+
+.mainpage {
   max-width: 1100px;
-  margin: 30px auto;  /* ← add px */
+  margin: 30px auto;
   padding: 2rem 1.5rem;
 }
 
 /* NAV */
-    .topnav {
+.topnav {
   display: flex;
-  justify-content: space-between;  /* pushes items apart */
+  justify-content: space-between;
   align-items: center;
   font-family: 'Arsenal';
   margin: 10px 10px 3rem 10px;
@@ -33,11 +36,12 @@ body{
   gap: 1rem;
 }
       
-      a{
-        text-decoration: None;
-      }
-      .back-btn {
-  font-size: 2em;   /* slightly bigger */
+a{
+  text-decoration: None;
+}
+
+.back-btn {
+  font-size: 2em;
   padding: 0 12px;
   color: #282530;
   text-decoration: none;
@@ -48,29 +52,33 @@ body{
   color: #615689;
   transform: translateX(-3px);
 }
+
 /* TITLE */
 h1{
   font-family:"Lora";
   font-weight:400;
- font-size:clamp(2.2rem,4.5vw,4.2rem);
-line-height:1.1;
+  font-size:clamp(2.2rem,4.5vw,4.2rem);
+  line-height:1.1;
+  text-align: center;
 }
-  h2{
-    font-family: "Lora";
-    font-weight:400;
-   
-    font-size: 2.5em;
-  }
+
+h2{
+  font-family: "Lora";
+  font-weight:400;
+  font-size: 2.5em;
+  text-align: center;
+}
 
 /* LAYOUT */
 .container{
   display:flex;
   align-items:flex-start;
+  justify-content: center;
   gap:4rem;
 }
 
 .column:first-child{
-  flex: 0 0 360px;   /* intentional phone width */
+  flex: 0 0 360px;
   display:flex;
   justify-content:center;
 }
@@ -79,23 +87,22 @@ line-height:1.1;
   flex:1;
   max-width: 620px;
 }
+
 /* PHONE FRAME */
 .phone-frame {
   background: linear-gradient(145deg,#2a2a2a,#1a1a1a);
   border-radius: 32px;
   padding: 15px;
   box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-width: 100%;
-max-width: 330px;
-  
-    /* controls overall size */
+  width: 100%;
+  max-width: 330px;
 }
 
 .screen {
   background: white;
-   border-radius: 24px;
+  border-radius: 24px;
   width: 100%;
-  aspect-ratio: 768 / 1664;  /* LOCKED RATIO */
+  aspect-ratio: 768 / 1664;
   overflow: hidden;
   position: relative;
 }
@@ -156,7 +163,6 @@ max-width: 330px;
   gap: 1rem;
 }
 
-
 .nav-btn {
   background: #615689;
   color: white;
@@ -179,41 +185,60 @@ max-width: 330px;
   font-family:'Arsenal';
 }
   
+#figma{
+  font-size: 1.3em;
+  text-decoration: underline;
+  color:#282530;
+}
   
-  #figma{
-    font-size: 1.3em;
-    text-decoration: underline;
-    color:#282530;
-  }
-  
-  #drivelink{
-     font-size: 1.5em;
-    text-decoration: underline;
-    color:#282530;
-  }
-  a{
-    color:#282530;
-  }
-  a:hover{
-    color: #615689;
-  }
+#drivelink{
+  font-size: 1.5em;
+  text-decoration: underline;
+  color:#282530;
+}
+
+a{
+  color:#282530;
+}
+a:hover{
+  color: #615689;
+}
 
 /* DESCRIPTION */
 .description p{
   font-size:1.1rem;
   line-height:1.6;
 }
-  .personas {
-    margin-top:30px;
-  }
-  .personas img{
-    max-width: 500px;
-    margin: 20px;
-  }
-  
-  
-  /* MODAL STYLES */
 
+/* PERSONAS SECTION */
+.personas-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.personas-section > p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 10px auto;
+}
+
+.personas {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.personas img{
+  max-width: 500px;
+  margin: 20px;
+}
+
+/* MODAL STYLES */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -276,13 +301,12 @@ max-width: 330px;
   color: white;
 }
 
-
 /* MOBILE */
 @media(max-width:768px){
-
   .container{
     flex-direction:column;
     gap:2rem;
+    align-items: center;
   }
 
   .container .column:first-child{
@@ -292,7 +316,6 @@ max-width: 330px;
   .container .column:last-child{
     order:1;
   }
-
 }
 
 </style>
@@ -300,87 +323,82 @@ max-width: 330px;
 
 <body>
 <div class="mainpage">
-<div class="wrapper">
 
-<div class="topnav">
-  <a href="all-works.html" class="back-btn">&#8249;</a>
-
-  <div class="nav-links">
-    <a href="all-works.html">works</a>
-   <a href="#" id="contactLink">contact</a>
-
-    <a href="https://drive.google.com/file/d/1L8sqHMsDxPt3LKfOW5OT71EavjOhv48e/view?usp=share_link" target="_blank">resume</a>
+  <div class="topnav">
+    <a href="all-works.html" class="back-btn">&#8249;</a>
+    <div class="nav-links">
+      <a href="all-works.html">works</a>
+      <a href="#" id="contactLink">contact</a>
+      <a href="https://drive.google.com/file/d/1L8sqHMsDxPt3LKfOW5OT71EavjOhv48e/view?usp=share_link" target="_blank">resume</a>
+    </div>
   </div>
-</div>
 
+  <h1>UniGo: A Campus Navigation App</h1>
 
-<h1>UniGo: A Campus Navigation App</h1>
+  <div class="container">
 
-<div class="container">
+    <!-- PHONE -->
+    <div class="column">
+      <div class="phone-frame">
 
-  <!-- PHONE -->
-  <div class="column">
-    <div class="phone-frame">
-
-      <div class="phone-notch">
-        <div class="phone-speaker"></div>
-        <div class="phone-camera"></div>
-      </div>
-
-      <div class="screen">
-
-        <div class="screen-page active"><img src="map1.png"></div>
-        <div class="screen-page"><img src="map2.png"></div>
-        <div class="screen-page"><img src="map3.png"></div>
-        <div class="screen-page"><img src="map4.png"></div>
-        <div class="screen-page"><img src="map5.png"></div>
-        <div class="screen-page"><img src="map6.png"></div>
-        <div class="screen-page"><img src="map7.png"></div>
-        <div class="screen-page"><img src="map8.png"></div>
-        <div class="screen-page"><img src="map9.png"></div>
-        <div class="screen-page"><img src="map10.png"></div>
-
-      </div>
-
-      <div class="navigation">
-        <button class="nav-btn" id="prevBtn">← Prev</button>
-        <div class="page-indicator">
-          <span id="currentPage">1</span> / <span id="totalPages">10</span>
+        <div class="phone-notch">
+          <div class="phone-speaker"></div>
+          <div class="phone-camera"></div>
         </div>
-        <button class="nav-btn" id="nextBtn">Next →</button>
+
+        <div class="screen">
+          <div class="screen-page active"><img src="map1.png"></div>
+          <div class="screen-page"><img src="map2.png"></div>
+          <div class="screen-page"><img src="map3.png"></div>
+          <div class="screen-page"><img src="map4.png"></div>
+          <div class="screen-page"><img src="map5.png"></div>
+          <div class="screen-page"><img src="map6.png"></div>
+          <div class="screen-page"><img src="map7.png"></div>
+          <div class="screen-page"><img src="map8.png"></div>
+          <div class="screen-page"><img src="map9.png"></div>
+          <div class="screen-page"><img src="map10.png"></div>
+        </div>
+
+        <div class="navigation">
+          <button class="nav-btn" id="prevBtn">← Prev</button>
+          <div class="page-indicator">
+            <span id="currentPage">1</span> / <span id="totalPages">10</span>
+          </div>
+          <button class="nav-btn" id="nextBtn">Next →</button>
+        </div>
+
       </div>
-
     </div>
+
+    <!-- DESCRIPTION -->
+    <div class="column">
+      <div class="description">
+        <p>
+          <b>Challenge:</b> Create an app to solve a pervasive problem faced by undergraduate university students. 
+          <br><b>Tools used:</b> Figma
+          <br><b>Timeframe: </b>October 2025 - December 2025
+          <br><b>Personal roles: </b>Research, Persona creation, Prototyping, User Testing
+          <br>
+          <br> The app UniGo was created in response to a challenge that many undergraduate university students face: navigating their campus. As a group, we conducted user research through extensive surveys to uncover patterns in navigation. 92% of participants reported relying solely on navigation apps such as Google Maps and Apple Maps; the majority of navigation issues occurred indoors. As such, we decided to create an app that was tailored to students' schedules and offered both GPS style and AR style navigation within buildings, tunnels, and bridges
+        </p>
+        
+        <span id="figma">
+          <a href="https://www.figma.com/proto/1HKIDpbCLjMLv7ov7J8bix/Group-2_Milestone-2-_High-Fidelity-Prototype?node-id=928-1633&starting-point-node-id=928%3A1633&t=FVFiVhaQggHjr48X-1" target="blank">
+            check out the prototype here
+          </a>
+        </span>
+      </div>
+    </div>
+
   </div>
 
-  <!-- DESCRIPTION -->
-  <div class="column">
-    <div class="description">
-      <p>
-     <b>Challenge:</b> Create an app to solve a pervasive problem faced by undergraduate university students. 
-        <br><b>Tools used:</b> Figma
-        <br><b>Timeframe: </b>October 2025 - December 2025
-        <br><b>Personal roles: </b>Research, Persona creation, Prototyping, User Testing
-        <br>
-        <br> The app UniGo was created in response to a challenge that many undergraduate university students face: navigating their campus.  As a group, we conducted user research through extensive surveys to uncover patterns in navigation. 92% of participants reported relying solely on navigation apps such as Google Maps and Apple Maps; the majority of navigation issues occurred indoors. As such, we decided to create an app that was tailored to students’ schedules and offered both GPS style and AR style navigation within buildings, tunnels, and bridges
-      </p>
-      
-       <span id="figma"> <a href= "https://www.figma.com/proto/1HKIDpbCLjMLv7ov7J8bix/Group-2_Milestone-2-_High-Fidelity-Prototype?node-id=928-1633&starting-point-node-id=928%3A1633&t=FVFiVhaQggHjr48X-1" target="blank">
-    check out the prototype here</a></span>
-  
-    </div>
-  </div>
-    
- 
-  
-</div>
 </div>
 
-  <h2>
-    Personas
-  </h2>
+<!-- PERSONAS SECTION -->
+<div class="personas-section">
+  <h2>Personas</h2>
   <p>
-    Through user interviews conducted with several students accross the University of Waterloo,
+    Through user interviews conducted with several students across the University of Waterloo,
     I developed three personas to reflect common pain points, habits, and needs of undergraduate university 
     students looking to navigate their campus. 
   </p>
@@ -388,23 +406,20 @@ max-width: 330px;
     <img src="p1.png">
     <img src="p2.png">
     <img src="p3.png">
-    
   </div>
   <span id="drivelink">
-   <a href="https://drive.google.com/file/d/1sLfWPrRGwPxUd6NeIquhFqZQjG4ddGRY/view?usp=sharing" target="_blank">Check out the full report here</a>
-         
+    <a href="https://drive.google.com/file/d/1sLfWPrRGwPxUd6NeIquhFqZQjG4ddGRY/view?usp=sharing" target="_blank">Check out the full report here</a>
   </span>
-  </div>
-  <!-- CONTACT MODAL -->
+</div>
+
+<!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contactModal">
   <div class="modal">
     <button class="close-btn" id="closeModal">&times;</button>
     <h3>Connect With Me</h3>
-
     <div class="contact-card">
       💼 <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">linkedin.com/in/sandy-srinivasan</a>
     </div>
-
     <div class="contact-card">
       ✉️ <a href="#">sandysri0711@gmail.com</a>
     </div>
@@ -428,24 +443,16 @@ function update(){
 }
 
 prevBtn.addEventListener("click",()=>{
-  if(current>0){
-    current--;
-    update();
-  }
+  if(current>0){ current--; update(); }
 });
 
 nextBtn.addEventListener("click",()=>{
-  if(current<pages.length-1){
-    current++;
-    update();
-  }
+  if(current<pages.length-1){ current++; update(); }
 });
 
 update();
-  
-  
-  
-  const contactLink = document.getElementById("contactLink");
+
+const contactLink = document.getElementById("contactLink");
 const modal = document.getElementById("contactModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -458,13 +465,9 @@ closeModal.addEventListener("click", function() {
   modal.classList.remove("active");
 });
 
-// Close when clicking outside modal
 modal.addEventListener("click", function(e) {
-  if (e.target === modal) {
-    modal.classList.remove("active");
-  }
+  if (e.target === modal) { modal.classList.remove("active"); }
 });
-
 </script>
 
 </body>

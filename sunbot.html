@@ -77,7 +77,7 @@ h2 {
   line-height: 1.6;
   font-size: 1.2rem;
   font-family: "Arsenal";
-  margin-top: 0;
+  margin-top: 30px;
   margin-bottom: 0;
 }
 
@@ -221,9 +221,21 @@ h2 {
   }
 }
 
-      .container{
-        padding-left:20px;
-        padding-right:20px;
+      .container {
+    display: grid;
+    /* Creates two columns of equal width (1 fraction of available space each) */
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; /* Adds space between columns */
+}
+
+.column {
+    padding: 15px;
+    
+    
+}
+      ul li{
+        font-family:'Arsenal';
+        font-size: 1.2em;
       }
 
     </style>
@@ -260,15 +272,45 @@ h2 {
       <h2>
         Persona and Empathy Map
       </h2>
+      <div class="container">
+        
+      <div class="column">
+        
+     
       
       <div class="planning">
         <img src="persona4.png">
         <img src="Research.png">
       </div>
+        
+        
     </div>
+        <div class="column">
+          <p>
+            
+          <b> Key Pain Points</b></p>
+       
+          <ul>
+            <li>
+            Overwhelmed by new medication.
+            </li>
+            <li>
+            Feels alone without a consistent support system.
+            </li>
+            <li>
+            Care is fragmented due to lack of family doctor. 
+            </li>
+            <li>
+            Struggles with impersonal interactions. 
+            </li>
+            
+          </ul>
+        </div>
+          
+      </div>
     
   
-
+</div>
     
     
         

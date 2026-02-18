@@ -30,28 +30,38 @@
   margin: 0 auto;
   padding: 2rem 1.5rem;
 }
-      .topnav{
-        display: flex;
-        justify-content: flex-end;
-        font-family: 'Arsenal'; 
-        margin-right:10px;
-        margin-top: 10px;
-        margin-bottom: 3rem;
-      }
+         .topnav {
+  display: flex;
+  justify-content: space-between;  /* pushes items apart */
+  align-items: center;
+  font-family: 'Arsenal';
+  margin: 10px 10px 3rem 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
       
-      .topnav a {
-  
+      a{
+        text-decoration: None;
+      }
+      .back-btn {
+  font-size: 2em;   /* slightly bigger */
+  padding: 0 12px;
   color: #282530;
-  text-align: center;
-  padding: 14px 16px;
-  
   text-decoration: none;
-  font-size: 17px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+  color: #615689;
+  transform: translateX(-3px);
 }
       h1 {
   font-family: "Lora";
   font-weight: 400;
-  font-size: clamp(2.7rem, 6vw, 6rem);
+  font-size: clamp(2.4rem, 4vw, 4rem);
   margin-bottom: 0.25rem;
   margin-top: 0;
 }
@@ -60,12 +70,12 @@ h2 {
   font-weight: 400;
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  margin-top: 0;
+  margin-top: 50px;
 }
       p {
-  max-width: 520px;
+  
   line-height: 1.6;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: "Arsenal";
   margin-top: 0;
   margin-bottom: 0;
@@ -97,101 +107,10 @@ h2 {
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
-  color: #615689;
-}
-      
-   
-   .project-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 800px;
-  height: 460px;
-  margin: 4rem auto;
-  border-radius: 18px;
-  overflow: hidden;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-     .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}    
-
-.project-card:first-of-type {
-  margin-top: 3rem;
-}
-
-    .project-text {
-  background-color: #6b6294;
-  color: white;
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-.project-text h3 {
-  font-family: "Lora";
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 0 0 1rem 0;
-}
-
-.project-text p {
-  color: #f2f1f7;
-  max-width: none;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.project-text p.tools {
-  font-size: 0.9rem;
-  margin-top: auto;
-}
-.project-image {
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-      
-      .project-card.reverse {
-  grid-template-columns: 1fr 1fr;
-}
-
-.project-card.reverse .project-text {
-  order: 2;
-}
-
-.project-card.reverse .project-image {
-  order: 1;
-}
-
-.allwork {
-  display: block;
-  text-align: left;
-  margin-left:30px;
-  margin-top: 20px;
-  margin-bottom:60px;
-  font-family: "Arsenal";
-  font-size: 1.5rem;
-  color: #282530;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.allwork:hover {
-  color: #615689;
-}
+      .planning img{
+        max-width: 700px;
+        margin-top: 50px;
+      }
       
       .contact-option2 {
   text-align: left;
@@ -205,56 +124,68 @@ h2 {
   align-items: center;
 }
 
-        .contact-option2 h3 {
-            font-size: 2rem;
-            margin-left: 30px;
-            color: #5a4b6b;
-            
-            font-weight: 400;
-          
-        }
+        .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(40, 37, 48, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
 
-        .contact-option2 .contact-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+.modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
 
-        .contact-option2 .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 24px;
-            background: linear-gradient(135deg, #657EBE 0%, #8C63CD 100%);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
+.modal {
+  background: #FDF7E4;
+  padding: 40px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  font-family: "Arsenal";
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
 
-        .contact-option2 .contact-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
+.modal-overlay.active .modal {
+  transform: translateY(0);
+}
 
-        .contact-option2 .icon-circle {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  border: none;
+  background: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #282530;
+}
 
-        .contact-option2 a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-family: "Arsenal";
-        }
+.close-btn:hover {
+  color: #615689;
+}
+
+.modal .contact-card {
+  margin-top: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #CAA9FF 0%, #8C63CD 100%);
+  border-radius: 10px;
+  color: white;
+}
+
       
       
       @media (max-width: 768px) {
@@ -302,22 +233,38 @@ h2 {
     <div class="page">
       
    
-  <div class="topnav">
-  
-  <a href="all-works.html">works</a>
-  <a href="#contact">contact</a>
-  <a href="https://drive.google.com/file/d/1L8sqHMsDxPt3LKfOW5OT71EavjOhv48e/view?usp=share_link" target="_blank">resume</a>
-</div>
+ <div class="topnav">
+  <a href="all-works.html" class="back-btn">&#8249;</a>
 
+  <div class="nav-links">
+    <a href="all-works.html">works</a>
+  <a href="#" id="contactLink">contact</a>
+
+    <a href="https://drive.google.com/file/d/1L8sqHMsDxPt3LKfOW5OT71EavjOhv48e/view?usp=share_link" target="_blank">resume</a>
+  </div>
+      </div>
    
     <h1>
-      Sunbot
+      Sunbot: A Health Management Robot
     </h1>
 
     <p>
-      Versatile designer with interests spanning graphic design, UX design, and Product design. 
+      <b>Challenge:</b> Create a solution that addresses the gaps in chronic care faced by residents in Waterloo managing chronic illnesses.
+      <br><b>Tools used:</b> Figma, Blender
+      <br><b>Timeframe:</b> October 2025
+      <br><b>Personal roles: </b>Research, ideation, prototyping screen interface.
       
     </p>
+      
+      
+      <h2>
+        Persona and Empathy Map
+      </h2>
+      
+      <div class="planning">
+        <img src="persona4.png">
+        <img src="Research.png">
+      </div>
     </div>
     
   
@@ -325,6 +272,48 @@ h2 {
     
     
         
-     </div>
+     
+  
+  
+  <div class="modal-overlay" id="contactModal">
+  <div class="modal">
+    <button class="close-btn" id="closeModal">&times;</button>
+    <h3>Connect With Me</h3>
+
+    <div class="contact-card">
+      💼 <a href="#">linkedin.com/in/sandy-srinivasan</a>
+    </div>
+
+    <div class="contact-card">
+      ✉️ <a href="#">sandysri0711@gmail.com</a>
+    </div>
+  </div>
+</div>
+  <script>
+  
+  
+  
+   
+  const contactLink = document.getElementById("contactLink");
+const modal = document.getElementById("contactModal");
+const closeModal = document.getElementById("closeModal");
+
+contactLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  modal.classList.add("active");
+});
+
+closeModal.addEventListener("click", function() {
+  modal.classList.remove("active");
+});
+
+// Close when clicking outside modal
+modal.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
+  
+  </script>
   </body>
 </html>

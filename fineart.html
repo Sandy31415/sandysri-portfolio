@@ -93,6 +93,21 @@ h2 {
   letter-spacing: 0.02em;
   font-family: "Arsenal";
 }
+      .image-modal {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.image-modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+#imageModal {
+  background: rgba(0, 0, 0, 0.8);
+}
 
 /* Change the color of links on hover */
 .topnav a:hover {
@@ -174,7 +189,9 @@ h2 {
 .modal-overlay.active .modal {
   transform: translateY(0);
 }
-
+.container img {
+  cursor: zoom-in;
+}
 .close-btn {
   position: absolute;
   top: 15px;
@@ -308,6 +325,13 @@ h2 {
     </div>
   </div>
 </div>
+    <!-- IMAGE MODAL -->
+<div class="modal-overlay" id="imageModal">
+  <div class="image-modal">
+    <button class="close-btn" id="closeImageModal">&times;</button>
+    <img id="modalImage" src="" alt="Expanded artwork">
+  </div>
+</div>
 <script>
     
     const contactLink = document.getElementById("contactLink");
@@ -327,6 +351,27 @@ closeModal.addEventListener("click", function() {
 modal.addEventListener("click", function(e) {
   if (e.target === modal) {
     modal.classList.remove("active");
+  }
+});
+  const images = document.querySelectorAll(".container img");
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeImageModal = document.getElementById("closeImageModal");
+
+images.forEach(function(img) {
+  img.addEventListener("click", function() {
+    modalImage.src = this.src;
+    imageModal.classList.add("active");
+  });
+});
+
+closeImageModal.addEventListener("click", function() {
+  imageModal.classList.remove("active");
+});
+
+imageModal.addEventListener("click", function(e) {
+  if (e.target === imageModal) {
+    imageModal.classList.remove("active");
   }
 });
 

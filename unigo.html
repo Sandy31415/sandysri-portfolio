@@ -162,6 +162,57 @@ h2{
   align-items: center;
   gap: 1rem;
 }
+  .personas img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+  
+  /* IMAGE MODAL */
+.image-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 37, 48, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2000;
+}
+
+.image-modal-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.image-modal {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.image-modal img {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  border-radius: 16px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+}
+
+.close-image-modal {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
 
 .nav-btn {
   background: #615689;
@@ -229,7 +280,7 @@ a:hover{
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   gap: 10px;
 }
 
@@ -411,7 +462,13 @@ a:hover{
     <a href="https://drive.google.com/file/d/1sLfWPrRGwPxUd6NeIquhFqZQjG4ddGRY/view?usp=sharing" target="_blank">Check out the full report here</a>
   </span>
 </div>
-
+<!-- IMAGE MODAL -->
+<div class="image-modal-overlay" id="imageModal">
+  <div class="image-modal">
+    <button class="close-image-modal" id="closeImageModal">&times;</button>
+    <img id="modalImage" src="" alt="Expanded Persona">
+  </div>
+</div>
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contactModal">
   <div class="modal">
@@ -467,6 +524,29 @@ closeModal.addEventListener("click", function() {
 
 modal.addEventListener("click", function(e) {
   if (e.target === modal) { modal.classList.remove("active"); }
+});
+  
+  
+  const personaImages = document.querySelectorAll(".personas img");
+const imageModal = document.getElementById("imageModal");
+const modalImage = document.getElementById("modalImage");
+const closeImageModal = document.getElementById("closeImageModal");
+
+personaImages.forEach(img => {
+  img.addEventListener("click", () => {
+    modalImage.src = img.src;
+    imageModal.classList.add("active");
+  });
+});
+
+closeImageModal.addEventListener("click", () => {
+  imageModal.classList.remove("active");
+});
+
+imageModal.addEventListener("click", (e) => {
+  if (e.target === imageModal) {
+    imageModal.classList.remove("active");
+  }
 });
 </script>
 

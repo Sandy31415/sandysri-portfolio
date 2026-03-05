@@ -93,14 +93,19 @@ h2 {
   letter-spacing: 0.02em;
   font-family: "Arsenal";
 }
-      .image-modal {
+   .image-modal {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-modal img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 90vh;   /* prevents image from exceeding screen height */
+  width: auto;
   height: auto;
   border-radius: 10px;
 }
@@ -178,6 +183,8 @@ h2 {
   border-radius: 20px;
   width: 90%;
   max-width: 500px;
+  max-height: 90vh;     /* prevents it from exceeding screen height */
+  overflow-y: auto;     /* allows scrolling inside modal if needed */
   position: relative;
   text-align: center;
   font-family: "Arsenal";

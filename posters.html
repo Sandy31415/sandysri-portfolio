@@ -11,7 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">  
-    
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>   
     <style>
       
       body{
@@ -140,16 +141,48 @@ h2 {
   margin: 0 0 20px 0;
 
       }
-      .process {
-        margin-top:20px;
-      }
-      
-      .process img{
-        max-width:200px;
-        margin: 20px;
-      }
-      
-      
+    .process {
+  max-width: 900px;
+       height: 380px;  /* add this — should be slightly taller than your image height (320px) */
+  position: relative; /* add this too */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+      .swiper-button-next,
+.swiper-button-prev {
+  color: #5f416b;  /* swap in any color you like */
+}
+
+/* Change the pagination dots */
+.swiper-pagination-bullet {
+  background: #5f416b;
+  opacity: 0.4;
+}
+
+.swiper-pagination-bullet-active {
+  background: #5f416b;
+  opacity: 1;
+}
+
+.process img {
+  width: auto;
+  height: 320px;   /* controls overall image size */
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+      .swiper-slide {
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
       /* MODAL STYLES */
 
 .modal-overlay {
@@ -356,12 +389,38 @@ h2 {
         Original Sketches
       </h2>
       
-      <div class="process">
-        <img src="processwork.png">
-        <img src="processwork2.png">
-        <img src="processwork3.png">
-        <img src="processwork5.png">
-        <img src="process8.png">
+      <div class="process swiper">
+  
+  <div class="swiper-wrapper">
+
+    <div class="swiper-slide">
+      <img src="processwork.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="processwork2.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="processwork3.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="processwork5.png">
+    </div>
+
+    <div class="swiper-slide">
+      <img src="process8.png">
+    </div>
+
+  </div>
+
+  <div class="swiper-pagination"></div>
+
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+
+</div>
        
         
       </div>
@@ -402,6 +461,24 @@ modal.addEventListener("click", function(e) {
   if (e.target === modal) {
     modal.classList.remove("active");
   }
+});
+     const swiper = new Swiper('.swiper', {
+
+  loop: true,
+  centeredSlides: true,
+  slidesPerView: 1.8,   // shows part of the next/prev slide
+  spaceBetween: 20,
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
 });
 
     

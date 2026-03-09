@@ -72,6 +72,7 @@ h2 {
   font-size: 1.6rem;
   margin-bottom: 1rem;
   margin-top: 50px;
+  margin-left: 20px;
 }
       p {
   
@@ -196,21 +197,21 @@ h2 {
         display: block;
         margin: 0;              /* gap handles spacing now */
       }
-      .sunbot{
-        display: flex;
-        flex-wrap: wrap;        /* wrap on smaller screens */
-        gap: 0px;
-        margin-top: 20px;
+     .sunbot {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  margin-top: 20px;
+}
 
-      }
-
-      .sunbot img{
-         width: 100%;            /* fill available space */
-        max-width: 450px;       /* cap on large screens */
-        height: auto;           /* preserve aspect ratio */
-        display: block;
-        margin-left: -50px;    
-      }
+.sunbot img {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
       .contact-option2 {
   text-align: left;
   background-color: #FDF7E4;

@@ -40,14 +40,12 @@
       }
       
       .topnav a {
-  
-  color: #282530;
-  text-align: center;
-  padding: 14px 16px;
-  
-  text-decoration: none;
-  font-size: 17px;
-}
+        color: #282530;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
       h1 {
   font-family: "Lora";
   font-weight: 400;
@@ -90,16 +88,8 @@ h2 {
   font-size: 1.5rem;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  
-  color: #615689;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  color: #615689;
-}
+.topnav a:hover { color: #615689; }
+.topnav a.active { color: #615689; }
       
    
    .project-card {
@@ -110,19 +100,17 @@ h2 {
   margin: 4rem auto;
   border-radius: 18px;
   overflow: hidden;
-   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
      .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }    
 
-.project-card:first-of-type {
-  margin-top: 3rem;
-}
+.project-card:first-of-type { margin-top: 3rem; }
 
-    .project-text {
+.project-text {
   background-color: #6b6294;
   color: white;
   padding: 2.5rem;
@@ -152,9 +140,7 @@ h2 {
   font-size: 0.9rem;
   margin-top: auto;
 }
-.project-image {
-  overflow: hidden;
-}
+.project-image { overflow: hidden; }
 
 .project-image img {
   width: 100%;
@@ -164,17 +150,9 @@ h2 {
   display: block;
 }
       
-      .project-card.reverse {
-  grid-template-columns: 1fr 1fr;
-}
-
-.project-card.reverse .project-text {
-  order: 2;
-}
-
-.project-card.reverse .project-image {
-  order: 1;
-}
+.project-card.reverse { grid-template-columns: 1fr 1fr; }
+.project-card.reverse .project-text { order: 2; }
+.project-card.reverse .project-image { order: 1; }
 
 .allwork {
   display: block;
@@ -188,73 +166,72 @@ h2 {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
-.allwork:hover {
-  color: #615689;
-}
+.allwork:hover { color: #615689; }
       
+      /* ---- CONTACT SECTION ---- */
       .contact-option2 {
-  text-align: left;
   background-color: #FDF7E4;
   padding: 30px;
-  margin: 80px auto;     /* THIS centers it */
+  margin: 80px auto;
   border-radius: 20px;
   max-width: 800px;
+  /* Stack vertically so heading + cards always sit inside the box */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
-        .contact-option2 h3 {
-            font-size: 2rem;
-            margin-left: 30px;
-            color: #5a4b6b;
-            
-            font-weight: 400;
-          
-        }
+.contact-option2 h3 {
+  font-size: 2rem;
+  color: #5a4b6b;
+  font-weight: 400;
+  font-family: "Lora";
+  margin: 0;
+  text-align: center;
+}
 
-        .contact-option2 .contact-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
+.contact-option2 .contact-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 500px;
+}
 
-        .contact-option2 .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 18px 24px;
-            background: linear-gradient(135deg, #657EBE 0%, #8C63CD 100%);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
+.contact-option2 .contact-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px 24px;
+  background: linear-gradient(135deg, #657EBE 0%, #8C63CD 100%);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
 
-        .contact-option2 .contact-card:hover {
-            transform: translateX(10px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
+.contact-option2 .contact-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
 
-        .contact-option2 .icon-circle {
-            width: 40px;
-            height: 40px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            flex-shrink: 0;
-        }
+.contact-option2 .icon-circle {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
 
-        .contact-option2 a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-family: "Arsenal";
-        }
+.contact-option2 a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: "Arsenal";
+}
       
       
       @media (max-width: 768px) {
@@ -263,31 +240,30 @@ h2 {
     gap: 1rem;
   }
 
-.project-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 800px;
-  height: 360px;
-  margin: 3rem auto;
-  border-radius: 18px;
-  overflow: hidden;
-}
-
-  .project-text {
-    padding: 2rem;
+  .project-card {
+    height: 360px;
+    margin: 3rem auto;
   }
 
-  p {
-    font-size: 0.95rem;
-  }
+  .project-text { padding: 2rem; }
+
+  p { font-size: 0.95rem; }
   
-  .intro-section {
-    margin-bottom: 5rem;
-  }
+  .intro-section { margin-bottom: 5rem; }
   
-  #works {
-    margin: 4rem 0 2rem;
+  #works { margin: 4rem 0 2rem; }
+
+  /* Contact cards go full-width on small screens */
+  .contact-option2 {
+    padding: 24px 20px;
+    margin: 60px auto;
   }
+
+  .contact-option2 h3 { font-size: 1.6rem; }
+
+  .contact-option2 .contact-card { padding: 14px 18px; }
+
+  .contact-option2 .contact-card:hover { transform: none; }
 }
 
       .container{
@@ -300,77 +276,66 @@ h2 {
 </head>
   <body>
     <div class="page">
-      
-   
+
   <div class="topnav">
-  
-  <a href="all-works.html">works</a>
-  <a href="#contact">contact</a>
-  <a href="https://drive.google.com/file/d/1zei9mEynZW9NtsJbHzX9viRGqAC1XlC3/view?usp=sharing" target="_blank">resume</a>
-</div>
+    <a href="all-works.html">works</a>
+    <a href="#contact">contact</a>
+    <a href="https://drive.google.com/file/d/1zei9mEynZW9NtsJbHzX9viRGqAC1XlC3/view?usp=sharing" target="_blank">resume</a>
+  </div>
 
     <div class="intro-section">
-    <h1>
-      Sandy Srinivasan
-    </h1>
-    <h2>
-      Designer, Artist
-    </h2>
-    <p>
-      Versatile designer with interests spanning graphic design, UX design, and Product design. 
-    </p>
+      <h1>Sandy Srinivasan</h1>
+      <h2>Designer, Artist</h2>
+      <p>Versatile designer with interests spanning graphic design, UX design, and Product design.</p>
     </div>
     
     <div class="works-section">
-  <h2 id="works">Selected Work</h2>
-  <div id="downarrow">&#8595;</div>
-</div>
+      <h2 id="works">Selected Work</h2>
+      <div id="downarrow">&#8595;</div>
+    </div>
 
     <a href="magazine.html">
-    <div class="project-card">
-  <div class="project-text">
-    <h3>Magazine: My Design Journey</h3>
-    <p>A magazine chronicling my design story.</p>
-    <p class="tools">Tools used: Adobe InDesign, Adobe Illustrator, Adobe Photoshop</p>
-  </div>
+      <div class="project-card">
+        <div class="project-text">
+          <h3>Magazine: My Design Journey</h3>
+          <p>A magazine chronicling my design story.</p>
+          <p class="tools">Tools used: Adobe InDesign, Adobe Illustrator, Adobe Photoshop</p>
+        </div>
+        <div class="project-image">
+          <img src="page1.png" alt="magazine coverpage">
+        </div> 
+      </div>
+    </a>
 
-  <div class="project-image">
-    <img src="page1.png" alt="magazine coverpage">
-  </div> 
-</div>
-      </a>
     <a href="unigo.html">
-    <div class="project-card reverse">
-  <div class="project-image">
-    <img src="map1.png" alt="homepage of app">
-  </div>
-  <div class="project-text">
-    <h3>UniGo: A Wayfinding App Prototype</h3>
-    <p>An app designed specifically for campus navigation.</p>
-    <p class="tools">Tools used: Figma</p>
-  </div>
-</div>
-      </a>
+      <div class="project-card reverse">
+        <div class="project-image">
+          <img src="map1.png" alt="homepage of app">
+        </div>
+        <div class="project-text">
+          <h3>UniGo: A Wayfinding App Prototype</h3>
+          <p>An app designed specifically for campus navigation.</p>
+          <p class="tools">Tools used: Figma</p>
+        </div>
+      </div>
+    </a>
       
-     
-
-<a href="all-works.html" class="allwork">Check out my full list of work →</a>
+    <a href="all-works.html" class="allwork">Check out my full list of work →</a>
     
-    
-            <div class="contact-option2" id="contact">
-                <h3>Connect With Me</h3>
-                <div class="contact-cards">
-                    <div class="contact-card">
-                        <div class="icon-circle">💼</div>
-                        <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">Linkedin.com</a>
-                    </div>
-                    <div class="contact-card">
-                        <div class="icon-circle">✉️</div>
-                        <a href="#">sandysri0711@gmail.com</a>
-                    </div>
-                </div>
-            </div>
+    <div class="contact-option2" id="contact">
+      <h3>Connect With Me</h3>
+      <div class="contact-cards">
+        <div class="contact-card">
+          <div class="icon-circle">💼</div>
+          <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">Linkedin.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="icon-circle">✉️</div>
+          <a href="#">sandysri0711@gmail.com</a>
+        </div>
+      </div>
+    </div>
         
-     </div>
+    </div>
   </body>
 </html>

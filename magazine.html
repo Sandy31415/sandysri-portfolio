@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">  
     
     <style>
       
@@ -21,672 +16,491 @@
         margin: 0;
       }
       .page {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}    .topnav {
-  display: flex;
-  justify-content: space-between;  /* pushes items apart */
-  align-items: center;
-  font-family: 'Arsenal';
-  margin: 10px 10px 3rem 10px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-      
-      a{
-        text-decoration: None;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
       }
+      .topnav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Arsenal';
+        margin: 10px 10px 3rem 10px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 1rem;
+      }
+      a { text-decoration: None; }
+
       .back-btn {
-  font-size: 2em;   /* slightly bigger */
-  padding: 0 12px;
-  color: #282530;
-  text-decoration: none;
-  transition: color 0.3s ease, transform 0.2s ease;
-}
-
-.back-btn:hover {
-  color: #615689;
-  transform: translateX(-3px);
-}
-      h1 {
-  font-family: "Lora";
-  font-weight: 400;
-  font-size: clamp(2.7rem, 6vw, 6rem);
-  margin-bottom: 0.25rem;
-  margin-top: 0;
-  margin-left: 30px;
-}
-h2 {
-  font-family: "Lora";
-  font-weight: 400;
-  font-size: 1.6rem;
-  margin-bottom: 1rem;
-  margin-top: 30px;
-  margin-left:30px;
-}
-      p {
- 
-  line-height: 1.6;
-  font-size: 1.2rem;
-  font-family: "Arsenal";
-  margin-top: 0;
-  margin-bottom: 60px;
-  max-width: 700px;
-  margin-left: 30px;
-
-}
-
-.intro-section {
-  margin-bottom: 8rem;
-}
-.works-section {
-  text-align: center;
-  margin: 6rem 0 3rem;
-}
-
-#works {
-  font-size: 2.5em;
-  letter-spacing: 0.02em;
-  font-family: "Arsenal";
-
-  margin-top:80px;
-  margin-left: 30px;
-  
-}
-      h3{
-        font-size: 2.5em;
-  letter-spacing: 0.02em;
-  font-family: "Arsenal";
-font-weight: 400;
-  margin-top:80px;
-  margin-left: 30px;
+        font-size: 2em;
+        padding: 0 12px;
+        color: #282530;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.2s ease;
+      }
+      .back-btn:hover {
+        color: #615689;
+        transform: translateX(-3px);
       }
 
-#downarrow {
-  font-size: 1.5rem;
-}
+      h1 {
+        font-family: "Lora";
+        font-weight: 400;
+        font-size: clamp(2.7rem, 6vw, 6rem);
+        margin-bottom: 0.25rem;
+        margin-top: 0;
+        margin-left: 30px;
+      }
+      h2 {
+        font-family: "Lora";
+        font-weight: 400;
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+        margin-top: 30px;
+        margin-left:30px;
+      }
+      p {
+        line-height: 1.6;
+        font-size: 1.2rem;
+        font-family: "Arsenal";
+        margin-top: 0;
+        margin-bottom: 60px;
+        max-width: 700px;
+        margin-left: 30px;
+      }
+      .intro-section { margin-bottom: 8rem; }
+      .works-section { text-align: center; margin: 6rem 0 3rem; }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  
-  color: #615689;
-}
+      #works {
+        font-size: 2.5em;
+        letter-spacing: 0.02em;
+        font-family: "Arsenal";
+        margin-top:80px;
+        margin-left: 30px;
+      }
+      h3 {
+        font-size: 2.5em;
+        letter-spacing: 0.02em;
+        font-family: "Arsenal";
+        font-weight: 400;
+        margin-top:80px;
+        margin-left: 30px;
+      }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  color: #615689;
-}
-      
-     
+      #downarrow { font-size: 1.5rem; }
+
+      .topnav a:hover { color: #615689; }
+      .topnav a.active { color: #615689; }
+
       .process {
         margin-left: 30px;
         margin-top:20px;
       }
-      
-     .process img {
-  max-width: 300px;
-  margin: 20px 20px 20px 0;  /* remove left margin */
-}
-      
-   .project-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 800px;
-  height: 460px;
-  margin: 4rem auto;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.project-card:first-of-type {
-  margin-top: 3rem;
-}
-
-    .project-text {
-  background-color: #6b6294;
-  color: white;
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 1rem;
-}
-
-.project-text h3 {
-  font-family: "Lora";
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 0 0 1rem 0;
-}
-
-.project-text p {
-  color: #f2f1f7;
-  max-width: none;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.project-text p.tools {
-  font-size: 0.9rem;
-  margin-top: auto;
-}
-.project-image {
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
-      
-/* MAGAZINE LAYOUT - Desktop */
-
-.magazine-showcase {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1500px;
-  margin: 40px auto;
-  min-height: 550px;
-  width: 100%;
-  max-width: 1000px;
-  gap: 30px;
-  position: relative;
-}
-
-.magazine {
-  width: 800px;
-  height: 550px;
-  position: relative;
-  display: flex;
-  transform-style: preserve-3d;
-  flex-shrink: 0;
-}
-
-.book-page {
-  width: 400px;
-  height: 550px;
-  position: absolute;
-  background: white;
-  transform-origin: left center;
-  transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transform-style: preserve-3d;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
-  overflow: hidden;
-  backface-visibility: hidden;
-}
-
-.book-page:nth-child(1) { z-index: 8; left: 0; }
-.book-page:nth-child(2) { z-index: 7; left: 0; }
-.book-page:nth-child(3) { z-index: 6; left: 0; }
-.book-page:nth-child(4) { z-index: 5; left: 0; }
-.book-page:nth-child(5) { z-index: 4; left: 0; }
-.book-page:nth-child(6) { z-index: 3; left: 0; }
-.book-page:nth-child(7) { z-index: 2; left: 0; }
-
-.book-page img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.book-page.flipped {
-  transform: rotateY(-180deg);
-  pointer-events: none;
-}
-
-.back-page {
-  width: 400px;
-  height: 550px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: white;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-  overflow: hidden;
-  z-index: 1;
-}
-      .descript{
-         display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center;  
-      }
-.back-page img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-   
-
-/* CONTROLS */
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  width: 100%;
-}
-
-button.controls {
-  padding: 0;  /* Remove padding - it makes circles into ovals */
-  background: #615689;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-family: 'Arsenal', sans-serif;
-  transition: all 0.3s;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-button.controls:hover:not(:disabled) {
-  background: #4e4670;
-  transform: scale(1.1);
-}
-
-button.controls:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  transform: none;
-}
-      
-      /* MODAL STYLES */
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(40, 37, 48, 0.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-.modal-overlay.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-.modal {
-  background: #FDF7E4;
-  padding: 40px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 500px;
-  position: relative;
-  text-align: center;
-  font-family: "Arsenal";
-  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-  transform: translateY(20px);
-  transition: transform 0.3s ease;
-}
-
-.modal-overlay.active .modal {
-  transform: translateY(0);
-}
-
-.close-btn {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  border: none;
-  background: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #282530;
-}
-
-.close-btn:hover {
-  color: #615689;
-}
-
-.modal .contact-card {
-  margin-top: 20px;
-  padding: 15px;
-  background: linear-gradient(135deg, #CAA9FF 0%, #8C63CD 100%);
-  border-radius: 10px;
-  color: white;
-}
-
-/* MOBILE STACK */
-
-@media (max-width: 1200px) {
-  .magazine {
-    transform: scale(0.9);
-    transform-origin: center center;
-  }
-  
-  .magazine-showcase {
-    min-height: 500px;
-  }
-}
-
-@media (max-width: 968px) {
-  .magazine-showcase {
-    perspective: none;
-    padding: 0;
-    min-height: auto;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .magazine {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    position: relative;
-    transform: none;
-    transform-style: flat;
-    margin: 0 auto;
-  }
-
-  .book-page {
-    width: 100%;
-    height: auto;
-    position: relative;
-    left: 0 !important;
-    transform: none !important;
-    transform-origin: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    margin-bottom: 20px;
-    cursor: default;
-    display: none;
-  }
-
-  .book-page.active-mobile {
-    display: block;
-  }
-
-  .book-page.flipped {
-    transform: none;
-    pointer-events: auto;
-  }
-
-  .back-page {
-    width: 100%;
-    height: auto;
-    position: relative;
-    right: auto;
-    display: none;
-  }
-
-  .back-page.active-mobile {
-    display: block;
-  }
-
-  .topnav {
-    justify-content: center;
-    gap: 1rem;
-  }
-
-  .project-card {
-    height: 360px;
-  }
-
-  p {
-    font-size: 0.95rem;
-  }
-
-  .intro-section {
-    margin-bottom: 5rem;
-  }
-
-  #works {
-    margin: 4rem 0 2rem;
-  }
-  
-  .controls {
-    flex-direction: row;
-    gap: 20px;
-  }
-  
-  .controls button {
-    width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-  }
-  
-  .controls button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-}
-
-      .container{
-        padding-left:20px;
-        padding-right:20px;
+      .process img {
+        max-width: 300px;
+        margin: 20px 20px 20px 0;
       }
 
+      .project-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 800px;
+        height: 460px;
+        margin: 4rem auto;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .project-card:first-of-type { margin-top: 3rem; }
+      .project-text {
+        background-color: #6b6294;
+        color: white;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 1rem;
+      }
+      .project-text h3 {
+        font-family: "Lora";
+        font-weight: 400;
+        font-size: 1.5rem;
+        line-height: 1.3;
+        margin: 0 0 1rem 0;
+      }
+      .project-text p {
+        color: #f2f1f7;
+        max-width: none;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .project-text p.tools { font-size: 0.9rem; margin-top: auto; }
+      .project-image { overflow: hidden; }
+      .project-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+      }
+
+      /* =============================================
+         MAGAZINE LAYOUT
+         ============================================= */
+
+      .magazine-showcase {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        perspective: 1500px;
+        margin: 40px auto;
+        min-height: 550px;
+        width: 100%;
+        max-width: 1000px;
+        gap: 30px;
+        position: relative;
+      }
+
+      /* ---- DESKTOP: two-page spread ---- */
+      .magazine {
+        width: 800px;
+        height: 550px;
+        position: relative;
+        display: flex;
+        transform-style: preserve-3d;
+        flex-shrink: 0;
+      }
+
+      .book-page {
+        width: 400px;
+        height: 550px;
+        position: absolute;
+        background: white;
+        transform-origin: left center;
+        transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+        transform-style: preserve-3d;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        cursor: pointer;
+        overflow: hidden;
+        backface-visibility: hidden;
+      }
+
+      .book-page:nth-child(1) { z-index: 8; left: 0; }
+      .book-page:nth-child(2) { z-index: 7; left: 0; }
+      .book-page:nth-child(3) { z-index: 6; left: 0; }
+      .book-page:nth-child(4) { z-index: 5; left: 0; }
+      .book-page:nth-child(5) { z-index: 4; left: 0; }
+      .book-page:nth-child(6) { z-index: 3; left: 0; }
+      .book-page:nth-child(7) { z-index: 2; left: 0; }
+
+      .book-page img { width: 100%; height: 100%; object-fit: cover; }
+
+      .book-page.flipped {
+        transform: rotateY(-180deg);
+        pointer-events: none;
+      }
+
+      .back-page {
+        width: 400px;
+        height: 550px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: white;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+        overflow: hidden;
+        z-index: 1;
+      }
+      .back-page img { width: 100%; height: 100%; object-fit: cover; }
+
+      .descript {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* CONTROLS */
+      .controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        width: 100%;
+      }
+
+      button.controls {
+        padding: 0;
+        background: #615689;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 1.5rem;
+        font-family: 'Arsenal', sans-serif;
+        transition: all 0.3s;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      button.controls:hover:not(:disabled) {
+        background: #4e4670;
+        transform: scale(1.1);
+      }
+      button.controls:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      /* ---- MOBILE: single-page flip ---- */
+      @media (max-width: 968px) {
+        .magazine-showcase {
+          perspective: 1200px;
+          min-height: auto;
+          gap: 16px;
+        }
+
+        /* The magazine wrapper becomes single-page wide */
+        .magazine {
+          width: 320px;
+          height: 440px;
+          transform-style: preserve-3d;
+          flex-shrink: 0;
+        }
+
+        /* All pages stack on top of each other, full width */
+        .book-page {
+          width: 320px;
+          height: 440px;
+          left: 0 !important;
+          transform-origin: left center; /* flip from left edge, same as desktop */
+          position: absolute;
+          cursor: pointer;
+        }
+
+        /* back-page sits at the same position as the stack */
+        .back-page {
+          width: 320px;
+          height: 440px;
+          position: absolute;
+          right: auto;
+          left: 0;
+          top: 0;
+          z-index: 1;
+        }
+
+        /* flipped pages still rotate away */
+        .book-page.flipped {
+          transform: rotateY(-180deg);
+          pointer-events: none;
+        }
+
+        .controls {
+          flex-direction: row;
+          gap: 10px;
+        }
+        button.controls {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+
+        .topnav { justify-content: center; gap: 1rem; }
+        .project-card { height: 360px; }
+        p { font-size: 0.95rem; }
+        .intro-section { margin-bottom: 5rem; }
+        #works { margin: 4rem 0 2rem; }
+      }
+
+      @media (max-width: 768px) {
+        h1 { font-size: clamp(2rem, 5vw, 3rem); }
+      }
+
+      /* MODAL */
+      .modal-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(40, 37, 48, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1000;
+      }
+      .modal-overlay.active { visibility: visible; opacity: 1; }
+      .modal {
+        background: #FDF7E4;
+        padding: 40px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        text-align: center;
+        font-family: "Arsenal";
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+      .modal-overlay.active .modal { transform: translateY(0); }
+      .close-btn {
+        position: absolute;
+        top: 15px; right: 20px;
+        border: none; background: none;
+        font-size: 1.8rem; cursor: pointer;
+        color: #282530;
+      }
+      .close-btn:hover { color: #615689; }
+      .modal .contact-card {
+        margin-top: 20px;
+        padding: 15px;
+        background: linear-gradient(135deg, #CAA9FF 0%, #8C63CD 100%);
+        border-radius: 10px;
+        color: white;
+      }
+
+      .container { padding-left:20px; padding-right:20px; }
     </style>
-    
-</head>
+  </head>
+
   <body>
     <div class="page">
       
-   
-<div class="topnav">
-  <a href="all-works.html" class="back-btn">&#8249;</a>
+      <div class="topnav">
+        <a href="all-works.html" class="back-btn">&#8249;</a>
+        <div class="nav-links">
+          <a href="all-works.html">works</a>
+          <a href="#" id="contactLink">contact</a>
+          <a href="https://drive.google.com/file/d/1zei9mEynZW9NtsJbHzX9viRGqAC1XlC3/view?usp=sharing" target="_blank">resume</a>
+        </div>
+      </div>
 
-  <div class="nav-links">
-    <a href="all-works.html">works</a>
-    <a href="#" id="contactLink">contact</a>
+      <h1>Magazine Project</h1>
+      <h2>My evolution as a designer</h2>
+      <p>
+        <b>Challenge:</b> Create a magazine chronicling your experience in first year in the GBDA program.
+        <br><b>Tools used: </b>Adobe Indesign, Adobe Photoshop, Adobe Illustrator
+        <br><b>Timeframe: </b>April 2025 
+      </p>
 
-    <a href="https://drive.google.com/file/d/1zei9mEynZW9NtsJbHzX9viRGqAC1XlC3/view?usp=sharing" target="_blank">resume</a>
-  </div>
-</div>
+      <div class="magazine-showcase">
+        <button class="controls" id="prevBtn">←</button>
+        
+        <div class="magazine">
+          <div class="book-page" data-page="1"><img src="page1.png" alt="Page 1"></div>
+          <div class="book-page" data-page="2"><img src="page2.png" alt="Page 2"></div>
+          <div class="book-page" data-page="3"><img src="page3.png" alt="Page 3"></div>
+          <div class="book-page" data-page="4"><img src="page 4.png" alt="Page 4"></div>
+          <div class="book-page" data-page="5"><img src="page5.png" alt="Page 5"></div>
+          <div class="book-page" data-page="6"><img src="page6.png" alt="Page 6"></div>
+          <div class="book-page" data-page="7"><img src="page7.png" alt="Page 7"></div>
+          <div class="back-page"><img src="page8.png" alt="Page 8"></div>
+        </div>
+        
+        <button class="controls" id="nextBtn">→</button>
+      </div>
 
-   
-    <h1>
-      Magazine Project
-    </h1>
-   <h2>
-     My evolution as a designer
-      </h2>
-   <p>
-     
-      <b> Challenge:</b> Create a magazine chronicling your experience in first year in the GBDA program.
-     <br><b>Tools used: </b>Adobe Indesign, Adobe Photoshop, Adobe Illustrator
-     <br><b> Timeframe: </b>April 2025 
-   </p>
-     
+      <div class="descript">
+        <p>
+          This magazine was created as part of a school project and features original photography captured throughout the city of Waterloo. It documents my experience as a first-year student in the GBDA program, exploring themes of exploration, growth, and hope for the future. <br>
+          The design incorporates bubbly, rounded typography and bright shades of blue and purple to reflect the optimism I felt toward the end of the year. I chose a less traditional layout approach, weaving images around and between blocks of text, to reinforce the idea of exploration and winding, unexpected paths.
+        </p>
+      </div>
+  
+      <span id="works">Process Work</span>
+      <div class="process">
+        <img src="magproc1.png">
+        <img src="magproc5.png">
+        <img src="magproc2.png">
+        <img src="magproc3.png">
+        <img src="magproc4.png">
+      </div>
     
-
-
-<div class="magazine-showcase">
-  <button class="controls" id="prevBtn">←</button>
-  
-  <div class="magazine">
-    <!-- Flippable pages (pages 1-7) -->
-    <div class="book-page" data-page="1"><img src="page1.png" alt="Page 1"></div>
-    <div class="book-page" data-page="2"><img src="page2.png" alt="Page 2"></div>
-    <div class="book-page" data-page="3"><img src="page3.png" alt="Page 3"></div>
-    <div class="book-page" data-page="4"><img src="page4.png" alt="Page 4"></div>
-    <div class="book-page" data-page="5"><img src="page5.png" alt="Page 5"></div>
-    <div class="book-page" data-page="6"><img src="page6.png" alt="Page 6"></div>
-    <div class="book-page" data-page="7"><img src="page7.png" alt="Page 7"></div>
-
-    <!-- Static back page (page 8, always visible on right) -->
-    <div class="back-page">
-      <img src="page8.png" alt="Page 8">
-    </div>
-  </div>
-  
-  <button class="controls" id="nextBtn">→</button>
-</div>
-
-<div class="descript">
-  
-      
-  <p>
-    This magazine was created as part of a school project and features original photography captured throughout the city of Waterloo. It documents my experience as a first-year student in the GBDA program, exploring themes of exploration, growth, and hope for the future. <br>
-    
-    The design incorporates bubbly, rounded typography and bright shades of blue and purple to reflect the optimism I felt toward the end of the year. I chose a less traditional layout approach, weaving images around and between blocks of text, to reinforce the idea of exploration and winding, unexpected paths.
-  </p></div>
-  
-    <span id="works"> Process Work</span>
-       <div class="process">
-      
-      <img src=magproc1.png>
-       <img src=magproc5.png>
-       <img src=magproc2.png>
-       <img src=magproc3.png>
-       <img src=magproc4.png>
-      
-      
-    </div>
-    
-    <h3>
-      Original Photographs
-    </h3>
-    <div class="process">
-      
-      <img src="C15.JPG">
-      <img src="IMG_8287.JPG">
-      <img src="reel3.JPG">
-      <img src="reel6.JPG">
-      <img src="reel5.png">
-      
-    </div>
-</div>
-  
-   
-    
-   <div class="modal-overlay" id="contactModal">
-  <div class="modal">
-    <button class="close-btn" id="closeModal">&times;</button>
-    <h3>Connect With Me</h3>
-
-    <div class="contact-card">
-      💼 <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">linkedin.com/in/sandy-srinivasan</a>
+      <h3>Original Photographs</h3>
+      <div class="process">
+        <img src="C15.JPG">
+        <img src="IMG_8287.JPG">
+        <img src="reel3.JPG">
+        <img src="reel6.JPG">
+        <img src="reel5.png">
+      </div>
     </div>
 
-    <div class="contact-card">
-      ✉️ <a href="#">sandysri0711@gmail.com</a>
+    <div class="modal-overlay" id="contactModal">
+      <div class="modal">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <h3>Connect With Me</h3>
+        <div class="contact-card">
+          💼 <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">linkedin.com/in/sandy-srinivasan</a>
+        </div>
+        <div class="contact-card">
+          ✉️ <a href="#">sandysri0711@gmail.com</a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<script>
+    <script>
       let currentPage = 0;
       const pages = document.querySelectorAll('.book-page');
-      const backPage = document.querySelector('.back-page');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
-
-      function isMobile() {
-        return window.innerWidth <= 968;
-      }
 
       function updateButtons() {
         prevBtn.disabled = currentPage === 0;
         nextBtn.disabled = currentPage === pages.length;
       }
 
-      function updateMobileView() {
-        if (isMobile()) {
-          // Remove all active classes
-          pages.forEach(p => p.classList.remove('active-mobile'));
-          backPage.classList.remove('active-mobile');
-
-          // Show current page
-          if (currentPage < pages.length) {
-            pages[currentPage].classList.add('active-mobile');
-          } else {
-            backPage.classList.add('active-mobile');
-          }
-        }
-      }
-
       function flipPage(direction) {
         if (direction === 'next' && currentPage < pages.length) {
-          if (!isMobile()) {
-            pages[currentPage].classList.add('flipped');
-          }
+          pages[currentPage].classList.add('flipped');
           currentPage++;
         } else if (direction === 'prev' && currentPage > 0) {
           currentPage--;
-          if (!isMobile()) {
-            pages[currentPage].classList.remove('flipped');
-          }
+          pages[currentPage].classList.remove('flipped');
         }
         updateButtons();
-        updateMobileView();
       }
 
       nextBtn.addEventListener('click', () => flipPage('next'));
       prevBtn.addEventListener('click', () => flipPage('prev'));
 
-      // Desktop: click to flip
+      // Click a page directly to advance (desktop & mobile)
       pages.forEach((page, index) => {
         page.addEventListener('click', () => {
-          if (!isMobile() && index === currentPage) {
-            flipPage('next');
-          }
+          if (index === currentPage) flipPage('next');
         });
       });
 
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        updateMobileView();
+      updateButtons();
+
+      // Modal
+      const contactLink = document.getElementById("contactLink");
+      const modal = document.getElementById("contactModal");
+      const closeModal = document.getElementById("closeModal");
+
+      contactLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
       });
 
-      // Initialize
-      updateButtons();
-      updateMobileView();
-  
-  const contactLink = document.getElementById("contactLink");
-const modal = document.getElementById("contactModal");
-const closeModal = document.getElementById("closeModal");
+      function closeModalFunc() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
 
-contactLink.addEventListener("click", function(e) {
-  e.preventDefault();
-  modal.classList.add("active");
-  document.body.style.overflow = "hidden";
-});
-
-function closeModalFunc() {
-  modal.classList.remove("active");
-  document.body.style.overflow = "auto";
-}
-
-closeModal.addEventListener("click", closeModalFunc);
-
-modal.addEventListener("click", function(e) {
-  if (e.target === modal) {
-    closeModalFunc();
-  }
-});
+      closeModal.addEventListener("click", closeModalFunc);
+      modal.addEventListener("click", function(e) {
+        if (e.target === modal) closeModalFunc();
+      });
     </script>
-
   </body>
 </html>

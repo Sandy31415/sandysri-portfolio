@@ -250,13 +250,17 @@
         will-change: transform;
       }
 
-      .slide {
-        min-width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        overflow: hidden;
+      #solution{
+        margin-top:80px;
+        margin-left: 60px;
       }
+     .slide {
+  min-width: 100%;
+  display: flex;
+  justify-content: flex-end;  /* ← was: center */
+  align-items: flex-start;
+  overflow: hidden;
+}
 
       .slide img {
         width: 100%;
@@ -365,7 +369,7 @@
         <img src="personaeee.png">
       </div>
 
-      <h2>Our Solution</h2>
+      <h1 id="solution">Our Solution</h1>
 
       <!-- ── Carousel 1: Uniqlo ── -->
       <div class="desktop-wrap">

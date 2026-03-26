@@ -102,6 +102,21 @@
       a {
         text-decoration: none;
       }
+      
+       .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  a:has(.project-card) {
+    display: block;
+  }
 
       .back-btn {
         font-size: 2em;
@@ -123,8 +138,27 @@
         margin-bottom: 0.25rem;
         margin-top: 0;
         margin-left: 30px;
+         cursor: default;
+  overflow: visible;
       }
+.ripple-container {
+  position: relative;
+  display: inline-block;
+}
 
+.ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(107, 98, 148, 0.5);
+  transform: scale(0);
+  animation: rippleOut 0.9s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleOut {
+  0%   { transform: scale(0); opacity: 0.7; }
+  100% { transform: scale(4); opacity: 0; }
+}
       h2 {
         font-family: "Lora";
         font-weight: 400;
@@ -174,7 +208,7 @@
       .project-card:first-of-type { margin-top: 3rem; }
 
       .project-text {
-        background-color: #6b6294;
+        background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         color: white;
         padding: 2.5rem;
         display: flex;
@@ -230,7 +264,15 @@
       }
 
       .allwork:hover { color: #615689; }
-
+#grain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.035;
+}
       .container {
         margin: 20px;
         display: grid;
@@ -323,7 +365,7 @@
     
   </head>
   <body>
-
+<canvas id="grain"></canvas>
     <!-- Background blobs -->
     <div class="blob-mid"></div>
     <div class="blob-bottom"></div>
@@ -339,7 +381,7 @@
         </div>
       </div>
 
-      <h1>Selected Works</h1>
+<h1 class="ripple-container" id="ripple-heading">Selected Works</h1>
 
       <div class="container">
 
@@ -387,7 +429,7 @@
           <a href="lumr.html">
             <div class="project-card reverse">
               <div class="project-image">
-                <img src="mascot.png" alt="cloud mascot">
+                <img src="1.png" alt="cloud mascot"style="object-position: right center;">
               </div>
               <div class="project-text">
                 <h3>Lumr:Your environmental buddy</h3>
@@ -461,6 +503,30 @@
     </div>
 
     <script>
+      
+      
+  const canvas = document.getElementById('grain');
+  const ctx = canvas.getContext('2d');
+
+  function generateGrain() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const imageData = ctx.createImageData(canvas.width, canvas.height);
+    const data = imageData.data;
+    for (let i = 0; i < data.length; i += 4) {
+      const value = Math.random() * 255;
+      data[i] = value;
+      data[i + 1] = value;
+      data[i + 2] = value;
+      data[i + 3] = 255;
+    }
+    ctx.putImageData(imageData, 0, 0);
+  }
+
+  generateGrain();
+  window.addEventListener('resize', generateGrain);
+
+      
       const contactLink = document.getElementById("contactLink");
       const modal = document.getElementById("contactModal");
       const closeModal = document.getElementById("closeModal");
@@ -479,6 +545,27 @@
           modal.classList.remove("active");
         }
       });
+      
+        const heading = document.getElementById('ripple-heading');
+
+  heading.addEventListener('mousemove', (e) => {
+    const rect = heading.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const circle = document.createElement('div');
+    circle.classList.add('ripple-circle');
+
+    const size = 60;
+    circle.style.width = size + 'px';
+    circle.style.height = size + 'px';
+    circle.style.left = (x - size / 2) + 'px';
+    circle.style.top = (y - size / 2) + 'px';
+
+    heading.appendChild(circle);
+
+    circle.addEventListener('animationend', () => circle.remove());
+  });
     </script>
 
   </body>

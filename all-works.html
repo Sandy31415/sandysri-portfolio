@@ -492,23 +492,25 @@
           </a>
         </div>
 
-        <!-- 5. Standard — Navratna -->
-        <div class="reveal" style="transition-delay: 0.13s">
-          <a href="branding.html">
+        
+          <div class="reveal" style="transition-delay: 0.13s">
+          <a href="lumr.html">
             <div class="project-card reverse">
               <div class="project-image">
-                <img src="redbottle.png" alt="navratna bottle" style="object-position: right center;">
+                <img src="1.png" alt="cloud mascot" style="object-position: right center;">
               </div>
               <div class="project-text">
-                <span class="card-tag">Rebrand · Branding</span>
-                <h3>Rebranding: Navratna</h3>
-                <p>A rebranding of Navratna Ayurvedic Hair Oil.</p>
-                <p class="tools">Tools: Photoshop, Illustrator, Firefly</p>
+                <span class="card-tag">Web Extension · Product</span>
+                <h3>Lumr: Your Environmental Buddy</h3>
+                <p>A web extension designed to promote sustainable online shopping habits.</p>
+                <p class="tools">Tools: Figma</p>
                 <div class="cta-arrow">↗</div>
               </div>
             </div>
           </a>
         </div>
+        <!-- 5. Standard — Navratna -->
+       
 
         <!-- 6. WIDE — Sunbot -->
         <div class="card-wide reveal" style="transition-delay: 0.07s">
@@ -529,23 +531,23 @@
         </div>
 
         <!-- 7. Standard — Lumr -->
-        <div class="reveal" style="transition-delay: 0.07s; grid-column: 1 / -1; max-width: 540px;">
-          <a href="lumr.html">
+      
+ <div class="reveal" style="transition-delay: 0.07s; grid-column: 1 / -1; max-width: 540px;">
+          <a href="branding.html">
             <div class="project-card reverse">
               <div class="project-image">
-                <img src="1.png" alt="cloud mascot" style="object-position: right center;">
+                <img src="redbottle.png" alt="navratna bottle" style="object-position: right center;">
               </div>
               <div class="project-text">
-                <span class="card-tag">Web Extension · Product</span>
-                <h3>Lumr: Your Environmental Buddy</h3>
-                <p>A web extension designed to promote sustainable online shopping habits.</p>
-                <p class="tools">Tools: Figma</p>
+                <span class="card-tag">Rebrand · Branding</span>
+                <h3>Rebranding: Navratna</h3>
+                <p>A rebranding of Navratna Ayurvedic Hair Oil.</p>
+                <p class="tools">Tools: Photoshop, Illustrator, Firefly</p>
                 <div class="cta-arrow">↗</div>
               </div>
             </div>
           </a>
         </div>
-
       </div>
     </div>
 
@@ -590,17 +592,7 @@
       closeModal.addEventListener("click", () => modal.classList.remove("active"));
       modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("active"); });
 
-      /* ── Ripple on heading ── */
-      const heading = document.getElementById('ripple-heading');
-      heading.addEventListener('mousemove', e => {
-        const rect = heading.getBoundingClientRect();
-        const circle = document.createElement('div');
-        circle.classList.add('ripple-circle');
-        const size = 60;
-        circle.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size/2}px;top:${e.clientY - rect.top - size/2}px`;
-        heading.appendChild(circle);
-        circle.addEventListener('animationend', () => circle.remove());
-      });
+     
 
       /* ── Scroll reveal ── */
       const revealObserver = new IntersectionObserver(entries => {

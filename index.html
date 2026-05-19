@@ -252,20 +252,19 @@
       .project-card.reverse .project-image { order: 1; }
 
       .allwork {
-        display: block;
-        text-align: left;
-        margin-left: 60px;
-        margin-top: 20px;
-        margin-bottom: 60px;
-        font-family: "Arsenal";
-        font-size: 1.5rem;
-        color: #282530;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-      .allwork.pill {
+  display: block;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  font-family: "Arsenal";
+  font-size: 1.5rem;
+  color: #282530;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.allwork.pill {
   display: inline-block;
-  margin-left: 0;
   text-align: center;
   padding: 10px 28px;
   font-size: 1.1rem;
@@ -488,7 +487,9 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         </div>
       </a>
 
-      <a href="all-works.html" class="allwork pill">Check out my full list of work →</a>
+     <div style="max-width: 800px; margin: 0 auto; text-align: left;">
+  <a href="all-works.html" class="allwork pill">Check out my full list of work →</a>
+</div>
 
       <div class="contact-option2" id="contact">
         <h3>Connect With Me</h3>
@@ -564,6 +565,51 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
   }, { threshold: 0.15 });
 
   revealEls.forEach(el => observer.observe(el));
+    
+    (function() {
+  const colors = ['#d4aaff', '#e0c8ff', '#c4a0f0', '#ede0ff', '#b89ee8'];
+
+  function createSparkle(x, y) {
+    const el = document.createElement('div');
+    const size = Math.random() * 6 + 3;
+    const angle = Math.random() * 360;
+    const dist  = Math.random() * 16 + 4;
+    const dur   = Math.random() * 700 + 600;
+
+    Object.assign(el.style, {
+      position: 'fixed',
+      left: x + 'px',
+      top:  y + 'px',
+      width:  size + 'px',
+      height: size + 'px',
+      borderRadius: '50%',
+      background: colors[Math.floor(Math.random() * colors.length)],
+      pointerEvents: 'none',
+      zIndex: 9999,
+      transform: 'translate(-50%, -50%) scale(1)',
+      opacity: 0.55,
+      transition: `transform ${dur}ms ease-out, opacity ${dur}ms ease-out`,
+    });
+
+    document.body.appendChild(el);
+
+    const rad = angle * Math.PI / 180;
+    requestAnimationFrame(() => {
+      el.style.transform = `translate(calc(-50% + ${Math.cos(rad) * dist}px), calc(-50% + ${Math.sin(rad) * dist}px)) scale(0)`;
+      el.style.opacity = '0';
+    });
+
+    setTimeout(() => el.remove(), dur);
+  }
+
+  let last = 0;
+  document.addEventListener('mousemove', e => {
+    const now = Date.now();
+    if (now - last < 50) return;
+    last = now;
+    createSparkle(e.clientX, e.clientY);
+  });
+})();
 </script>
   </body>
 </html>

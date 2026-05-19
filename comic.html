@@ -465,65 +465,59 @@
     </div>
 
     <script>
-      let currentPage = 0;
-      const pages = document.querySelectorAll('.book-page');
-      const prevBtn = document.getElementById('prevBtn');
-      const nextBtn = document.getElementById('nextBtn');
+     let currentPage = 0;
+const pages = document.querySelectorAll('.book-page');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const totalPages = pages.length; // 6 book-pages + back-page
 
-      function updateButtons() {
-        prevBtn.disabled = currentPage === 0;
-        nextBtn.disabled = currentPage === pages.length;
-      }
+function updateButtons() {
+  prevBtn.disabled = currentPage === 0;
+  nextBtn.disabled = currentPage === totalPages;
+}
 
-      function flipPage(direction) {
-        if (direction === 'next' && currentPage < pages.length) {
-          pages[currentPage].classList.add('flipped');
-          currentPage++;
-        } else if (direction === 'prev' && currentPage > 0) {
-          currentPage--;
-          pages[currentPage].classList.remove('flipped');
-        }
-        updateButtons();
-      }
+function flipPage(direction) {
+  if (direction === 'next' && currentPage < totalPages) {
+    pages[currentPage].classList.add('flipped');
+    currentPage++;
+  } else if (direction === 'prev' && currentPage > 0) {
+    currentPage--;
+    pages[currentPage].classList.remove('flipped');
+  }
+  updateButtons();
+}
 
-      nextBtn.addEventListener('click', () => flipPage('next'));
-      prevBtn.addEventListener('click', () => flipPage('prev'));
+nextBtn.addEventListener('click', () => flipPage('next'));
+prevBtn.addEventListener('click', () => flipPage('prev'));
 
-      // Click a page directly to advance (desktop & mobile)
-      pages.forEach((page, index) => {
-        page.addEventListener('click', () => {
-          if (index === currentPage) flipPage('next');
-        });
-      });
+pages.forEach((page, index) => {
+  page.addEventListener('click', () => {
+    if (index === currentPage) flipPage('next');
+  });
+});
 
-      updateButtons();
+updateButtons();
 
-      // Modal
-      const contactLink = document.getElementById("contactLink");
-      const modal = document.getElementById("contactModal");
-      const closeModal = document.getElementById("closeModal");
+// Modal
+const contactLink = document.getElementById("contactLink");
+const modal = document.getElementById("contactModal");
+const closeModal = document.getElementById("closeModal");
 
-      contactLink.addEventListener("click", function(e) {
-        e.preventDefault();
-        modal.classList.add("active");
-        document.body.style.overflow = "hidden";
-      });
+contactLink.addEventListener("click", function(e) {
+  e.preventDefault();
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+});
 
-      function closeModalFunc() {
-        modal.classList.remove("active");
-        document.body.style.overflow = "auto";
-      }
+function closeModalFunc() {
+  modal.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
 
-      closeModal.addEventListener("click", closeModalFunc);
-      modal.addEventListener("click", function(e) {
-        if (e.target === modal) closeModalFunc();
-      });
-      
-      
-      (function() {
-  const colors = ['#d4aaff', '#e0c8ff', '#c4a0f0', '#ede0ff', '#b89ee8'];
-
-  
+closeModal.addEventListener("click", closeModalFunc);
+modal.addEventListener("click", function(e) {
+  if (e.target === modal) closeModalFunc();
+});
 
     </script>
   </body>

@@ -8,20 +8,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Bubbler+One&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
+      html { scroll-behavior: smooth; }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+      .reveal {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
       body {
         background-color: #EBDEFF;
@@ -32,7 +29,6 @@
         overflow-x: hidden;
       }
 
-      /* ── Option 2: Fine grid + soft blobs ── */
       body::before {
         content: '';
         position: fixed;
@@ -45,7 +41,6 @@
         z-index: 0;
       }
 
-      /* Blob 1 — top right, large, lighter purple */
       body::after {
         content: '';
         position: fixed;
@@ -58,8 +53,7 @@
         pointer-events: none;
         z-index: 0;
       }
- 
-      /* Blob 2 — mid left */
+
       .blob-mid {
         position: fixed;
         bottom: 20%;
@@ -71,26 +65,25 @@
         pointer-events: none;
         z-index: 0;
       }
+
       .view-pill {
-  display: inline-block;
-  margin-top: auto;
-  align-self: flex-start;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  color: white;
-  font-family: "Arsenal";
-  font-size: 0.85rem;
-  padding: 5px 14px;
-  border-radius: 999px;
-  letter-spacing: 0.05em;
-  transition: background 0.25s ease, border-color 0.25s ease;
-}
+        display: inline-block;
+        margin-top: auto;
+        align-self: flex-start;
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+        color: white;
+        font-family: "Arsenal";
+        font-size: 0.85rem;
+        padding: 5px 14px;
+        border-radius: 999px;
+        letter-spacing: 0.05em;
+        transition: background 0.25s ease, border-color 0.25s ease;
+      }
+      .project-card:hover .view-pill {
+        background: rgba(255, 255, 255, 0.15);
+        border-color: white;
+      }
 
-.project-card:hover .view-pill {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: white;
-}
-
-      /* Blob 3 — bottom right */
       .blob-bottom {
         position: fixed;
         bottom: -100px;
@@ -103,7 +96,6 @@
         z-index: 0;
       }
 
-      /* Keep all page content above the background effects */
       .page {
         position: relative;
         z-index: 1;
@@ -112,9 +104,7 @@
         padding: 2rem 1.5rem;
       }
 
-      a {
-        text-decoration: none;
-      }
+      a { text-decoration: none; }
 
       .topnav {
         display: flex;
@@ -132,7 +122,6 @@
         text-decoration: none;
         font-size: 17px;
       }
-
       .topnav a:hover { color: #615689; }
       .topnav a.active { color: #615689; }
 
@@ -144,10 +133,11 @@
         margin-top: 0;
         color: #3b224c;
       }
+
       #pill-label {
-  display: inline-block;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+        display: inline-block;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
 
       h2 {
         font-family: "Lora";
@@ -166,9 +156,7 @@
         margin-bottom: 0;
       }
 
-      .intro-section {
-        margin-bottom: 8rem;
-      }
+      .intro-section { margin-bottom: 8rem; }
 
       .works-section {
         text-align: center;
@@ -182,9 +170,7 @@
         margin-bottom: 0.5rem;
       }
 
-      #downarrow {
-        font-size: 1.5rem;
-      }
+      #downarrow { font-size: 1.5rem; }
 
       .project-card {
         display: grid;
@@ -207,7 +193,6 @@
 
       .project-text {
         background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
-
         color: white;
         padding: 2.5rem;
         display: flex;
@@ -252,37 +237,37 @@
       .project-card.reverse .project-image { order: 1; }
 
       .allwork {
-  display: block;
-  text-align: left;
-  margin-top: 20px;
-  margin-bottom: 60px;
-  font-family: "Arsenal";
-  font-size: 1.5rem;
-  color: #282530;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+        display: block;
+        text-align: left;
+        margin-top: 20px;
+        margin-bottom: 60px;
+        font-family: "Arsenal";
+        font-size: 1.5rem;
+        color: #282530;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
 
-.allwork.pill {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 28px;
-  font-size: 1.1rem;
-  color: #282530;
-  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
+      .allwork.pill {
+        display: inline-block;
+        text-align: center;
+        padding: 10px 28px;
+        font-size: 1.1rem;
+        color: #282530;
+        transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      }
 
-.allwork.pill:hover {
-  background: #6b4fa8;
-  color: white;
-  border-color: #6b4fa8;
-}
+      .allwork.pill:hover {
+        background: #6b4fa8;
+        color: white;
+        border-color: #6b4fa8;
+      }
 
       .allwork:hover { color: #615689; }
 
-      /* ---- CONTACT SECTION ---- */
+      /* ── CONTACT ── */
       .contact-option2 {
-background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
+        background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         padding: 30px;
         margin: 80px auto;
         border-radius: 20px;
@@ -309,31 +294,32 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         width: 100%;
         max-width: 500px;
       }
-      
+
       #downarrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0.75rem;
-}
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0.75rem;
+      }
 
-.scroll-line {
-  width: 2px;
-  height: 40px;
-  background: linear-gradient(to bottom, transparent, #6b6294, transparent);
-  background-size: 100% 200%;
-  background-position: 0% 0%;
-  animation: shootingStar 1.6s ease-in-out infinite;
-  transform-origin: top;
-  border-radius: 999px;
-}
+      .scroll-line {
+        width: 2px;
+        height: 40px;
+        background: linear-gradient(to bottom, transparent, #6b6294, transparent);
+        background-size: 100% 200%;
+        background-position: 0% 0%;
+        animation: shootingStar 1.6s ease-in-out infinite;
+        transform-origin: top;
+        border-radius: 999px;
+      }
 
-@keyframes shootingStar {
-  0%   { background-position: 0% -100%; opacity: 0; }
-  20%  { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { background-position: 0% 200%; opacity: 0; }
-}
+      @keyframes shootingStar {
+        0%   { background-position: 0% -100%; opacity: 0; }
+        20%  { opacity: 1; }
+        80%  { opacity: 1; }
+        100% { background-position: 0% 200%; opacity: 0; }
+      }
+
       .contact-option2 .contact-card {
         display: flex;
         align-items: center;
@@ -343,15 +329,16 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         border-radius: 10px;
         transition: all 0.3s ease;
       }
+
       #grain {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0.035;
-}
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0.035;
+      }
 
       .contact-option2 .contact-card:hover {
         transform: translateX(10px);
@@ -385,8 +372,8 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         color: black;
         font-family: "Arsenal";
         font-size: 1rem;
-         min-width: 160px;
-  text-align: center;
+        min-width: 160px;
+        text-align: center;
         padding: 6px 18px;
         border-radius: 999px;
         margin-top: 30px;
@@ -394,68 +381,252 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         letter-spacing: 0.05em;
       }
 
+      
+      
+      
+      .modal-overlay {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(40, 37, 48, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1000;
+      }
+      .modal-overlay.active { visibility: visible; opacity: 1; }
+      .modal {
+        background: #FDF7E4;
+        padding: 40px;
+        border-radius: 20px;
+        width: 90%;
+        max-width: 500px;
+        position: relative;
+        text-align: center;
+        font-family: "Arsenal";
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        transform: translateY(20px);
+        transition: transform 0.3s ease;
+      }
+      .modal-overlay.active .modal { transform: translateY(0); }
+      .close-btn {
+        position: absolute;
+        top: 15px; right: 20px;
+        border: none; background: none;
+        font-size: 1.8rem; cursor: pointer;
+        color: #282530;
+      }
+      .close-btn:hover { color: #615689; }
+      .modal .contact-card {
+        margin-top: 20px;
+        padding: 15px;
+        background: linear-gradient(135deg, #CAA9FF 0%, #8C63CD 100%);
+        border-radius: 10px;
+        color: white;
+      }
+      /* ════════════════════════════════════════
+         FILMSTRIP
+      ════════════════════════════════════════ */
+      .filmstrip-section {
+        position: relative;
+        z-index: 1;
+        /* tall enough to give scroll travel; actual strip is sticky inside */
+        height: 700px;
+        margin: 0 -40px;       /* bleed past page padding */
+      }
+
+      .filmstrip-sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        pointer-events: none; /* re-enabled per card below */
+      }
+
+      .filmstrip-label {
+        font-family: "Arsenal";
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #6b5fa8;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        opacity: 0.75;
+        pointer-events: none;
+      }
+
+      .filmstrip-track {
+        display: flex;
+        align-items: stretch;
+        gap: 24px;
+        padding: 40px 120px;
+        will-change: transform;
+        pointer-events: none;
+      }
+
+      /* individual mini-card */
+      .film-card {
+        flex-shrink: 0;
+        width: 260px;
+        height: 320px;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+        display: flex;
+        flex-direction: column;
+        text-decoration: none;
+        pointer-events: all;
+        transition: transform 0.45s cubic-bezier(0.34,1.1,0.64,1),
+                    box-shadow 0.45s ease;
+        transform-origin: center center;
+        position: relative;
+      }
+
+      .film-card:hover {
+        box-shadow: 0 14px 36px rgba(57, 30, 107, 0.28);
+      }
+
+      .film-card-img {
+        overflow: hidden;
+        flex: 1;
+        min-height: 160px;
+      }
+
+      .film-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .film-card:hover .film-card-img img {
+        transform: scale(1.06);
+      }
+
+      .film-card-text {
+        background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
+        color: white;
+        padding: 14px 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .film-card-tag {
+        font-family: "Arsenal";
+        font-size: 0.65rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(210,190,255,0.75);
+      }
+
+      .film-card-title {
+        font-family: "Lora";
+        font-weight: 400;
+        font-size: 0.95rem;
+        color: white;
+        margin: 0;
+        line-height: 1.3;
+      }
+
+      /* focus-center glow ring */
+      .film-card.is-center::after {
+        content: '';
+        position: absolute;
+        inset: -3px;
+        border-radius: 18px;
+        border: 2px solid rgba(180, 140, 255, 0.55);
+        pointer-events: none;
+        transition: opacity 0.4s ease;
+      }
+
+      /* ── scroll hint arrows ── */
+      .filmstrip-hint {
+        display: flex;
+        justify-content: center;
+        gap: 28px;
+        margin-top: 1.4rem;
+        pointer-events: none;
+        opacity: 0.45;
+      }
+
+      .filmstrip-hint span {
+        font-family: "Arsenal";
+        font-size: 0.8rem;
+        color: #4a3878;
+        letter-spacing: 0.06em;
+      }
+
       @media (max-width: 768px) {
-        .topnav {
-          justify-content: center;
-          gap: 1rem;
-        }
-
-        .project-card {
-          height: 360px;
-          margin: 3rem auto;
-        }
-
+        .topnav { justify-content: center; gap: 1rem; }
+        .project-card { height: 360px; margin: 3rem auto; }
         .project-text { padding: 2rem; }
-
         p { font-size: 0.95rem; }
-
         .intro-section { margin-bottom: 5rem; }
-
         #works { margin: 4rem 0 2rem; }
-
-        .contact-option2 {
-          padding: 24px 20px;
-          margin: 60px auto;
-        }
-
+        .contact-option2 { padding: 24px 20px; margin: 60px auto; }
         .contact-option2 h3 { font-size: 1.6rem; }
         .contact-option2 .contact-card { padding: 14px 18px; }
         .contact-option2 .contact-card:hover { transform: none; }
+        .filmstrip-section { height: 560px; }
+        .film-card { width: 200px; height: 260px; }
+        .film-card-img { height: 155px; }
       }
 
       .container {
         padding-left: 20px;
         padding-right: 20px;
       }
+      
+      footer{
+        padding: 50px;
+         margin-left: -40px;
+  margin-right: -40px;
+        background-color:#615689;
+        
+      }
+      footer p{
+        color: white;
+      }
+      footer a{
+        color: white;
+      }
+      
     </style>
   </head>
 
   <body>
-    
     <canvas id="grain"></canvas>
-    <!-- Background blobs (positioned fixed, behind everything) -->
     <div class="blob-mid"></div>
     <div class="blob-bottom"></div>
 
     <div class="page">
 
       <div class="topnav">
-        <a href="all-works.html">works</a>
-        <a href="#contact">contact</a>
+        <a href="#works">works</a>
+       <a href="#" id="contactLink">contact</a>
         <a href="https://drive.google.com/file/d/1_OQUvy1x_LP0ujl0fLU8qiJ6eTpFMAe9/view?usp=sharing" target="_blank">resume</a>
       </div>
 
       <div class="intro-section">
         <h1>Sandy Srinivasan</h1>
-      <span class="pill"><span id="pill-label">Designer</span></span>
+        <span class="pill"><span id="pill-label">Designer</span></span>
         <p>Versatile designer with interests spanning graphic design, UX design, and product design.</p>
       </div>
 
       <div class="works-section">
         <h2 id="works">Selected Work</h2>
-<div id="downarrow">
-  <div class="scroll-line"></div>
-</div>
+        <div id="downarrow">
+          <div class="scroll-line"></div>
+        </div>
       </div>
 
       <a href="magazine.html">
@@ -465,7 +636,6 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
             <p>A magazine chronicling my design story.</p>
             <span class="view-pill">View project →</span>
             <p class="tools">Tools used: Adobe InDesign, Adobe Illustrator, Adobe Photoshop</p>
-            
           </div>
           <div class="project-image">
             <img src="page1.png" alt="magazine coverpage">
@@ -473,143 +643,274 @@ background: linear-gradient(135deg, #391e6b 0%, #6b4fa8 100%);
         </div>
       </a>
 
-      <a href="unigo.html">
+      <a href="sunbot.html">
         <div class="project-card reverse">
           <div class="project-image">
-            <img src="map1.png" alt="homepage of app">
+            <img src="slide1.jpg" alt="image of sunbot">
           </div>
           <div class="project-text">
-            <h3>UniGo: A Wayfinding App Prototype</h3>
-            <p>An app designed specifically for campus navigation.</p>
+            <h3>Sunbot: A Healthcare Robot prototype</h3>
+            <p>An interactive pill dispenser and tracker for chronic healthcare management.</p>
             <span class="view-pill">View project →</span>
-            <p class="tools">Tools used: Figma</p>
+            <p class="tools">Tools used: Figma, Blender</p>
           </div>
         </div>
       </a>
 
-     <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-  <a href="all-works.html" class="allwork pill">Check out my full list of work →</a>
-</div>
+    </div><!-- /page -->
 
-      <div class="contact-option2" id="contact">
-        <h3>Connect With Me</h3>
-        <div class="contact-cards">
-          <div class="contact-card">
-            <div class="icon-circle">💼</div>
-            <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">Linkedin.com</a>
-          </div>
-          <div class="contact-card">
-            <div class="icon-circle">✉️</div>
-            <a href="#">sandysri0711@gmail.com</a>
-          </div>
+    <!-- ══════════════════════════════════════
+         FILMSTRIP  (full-bleed, sticky scroll)
+    ══════════════════════════════════════ -->
+    <div class="filmstrip-section" id="filmstripSection">
+      <div class="filmstrip-sticky" id="filmstripSticky">
+        <p class="filmstrip-label">More work — scroll to explore</p>
+        <div class="filmstrip-track" id="filmstripTrack">
+
+          <a href="posters.html" class="film-card">
+            <div class="film-card-img"><img src="poster1.png" alt="Poster Gallery"></div>
+            <div class="film-card-text">
+              <span class="film-card-tag">Poster · Print</span>
+              <p class="film-card-title">Poster Gallery</p>
+            </div>
+          </a>
+
+          <a href="fineart.html" class="film-card">
+            <div class="film-card-img"><img src="fineart2.png" alt="Fine Arts"></div>
+            <div class="film-card-text">
+              <span class="film-card-tag">Fine Arts · Traditional</span>
+              <p class="film-card-title">Fine Arts</p>
+            </div>
+          </a>
+
+          <a href="lumr.html" class="film-card">
+            <div class="film-card-img"><img src="1.png" alt="Lumr" style="object-position: right center;"></div>
+            <div class="film-card-text">
+              <span class="film-card-tag">Web Extension · Product</span>
+              <p class="film-card-title">Lumr: Your Environmental Buddy</p>
+            </div>
+          </a>
+
+          <a href="unigo.html" class="film-card">
+            <div class="film-card-img"><img src="map1.png" alt="Sunbot"></div>
+            <div class="film-card-text">
+              <span class="film-card-tag">Wayfinding · Product</span>
+              <p class="film-card-title">Unigo: Explore campus effortlessly</p>
+            </div>
+          </a>
+
+          <a href="branding.html" class="film-card">
+            <div class="film-card-img"><img src="redbottle.png" alt="Navratna Rebrand" style="object-position: right center;"></div>
+            <div class="film-card-text">
+              <span class="film-card-tag">Rebrand · Branding</span>
+              <p class="film-card-title">Rebranding: Navratna</p>
+            </div>
+          </a>
+
+          <a href="comic.html" class="film-card">
+            <div class="film-card-img"><img src="comic-page1.png" alt="Rational Terror" style="object-position: right center;"></div>
+            <div class="film-card-text">
+              <span class="film-card-tag">Comic · Illustration</span>
+              <p class="film-card-title">Comic: Rational Terror</p>
+            </div>
+          </a>
+
+        </div><!-- /track -->
+        <div class="filmstrip-hint">
+          <span>← scroll →</span>
         </div>
       </div>
-
+    </div><!-- /filmstrip-section -->
+   
+    <div class="modal-overlay" id="contactModal">
+      <div class="modal">
+        <button class="close-btn" id="closeModal">&times;</button>
+        <h3>Connect With Me</h3>
+        <div class="contact-card">
+          💼 <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank">linkedin.com/in/sandy-srinivasan</a>
+        </div>
+        <div class="contact-card">
+          ✉️ <a href="#">sandysri0711@gmail.com</a>
+        </div>
+      </div>
     </div>
     
-  
-  <script>
-  const revealEls = document.querySelectorAll(
-    'h1, .pill, .intro-section p, .works-section, .project-card, .allwork, .contact-option2'
-  );
 
-  const roles = ['Designer', 'Artist', 'UX Thinker', 'Maker'];
-  let ri = 0;
-  const pillLabel = document.getElementById('pill-label');
-
-     const canvas = document.getElementById('grain');
-  const ctx = canvas.getContext('2d');
-
-  function generateGrain() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    const imageData = ctx.createImageData(canvas.width, canvas.height);
-    const data = imageData.data;
-    for (let i = 0; i < data.length; i += 4) {
-      const value = Math.random() * 255;
-      data[i] = value;
-      data[i + 1] = value;
-      data[i + 2] = value;
-      data[i + 3] = 255;
-    }
-    ctx.putImageData(imageData, 0, 0);
-  }
-
-  generateGrain();
-  window.addEventListener('resize', generateGrain);
-  setInterval(() => {
-    pillLabel.style.opacity = '0';
-    pillLabel.style.transform = 'translateY(6px)';
-    pillLabel.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-    setTimeout(() => {
-      ri = (ri + 1) % roles.length;
-      pillLabel.textContent = roles[ri];
-      pillLabel.style.opacity = '1';
-      pillLabel.style.transform = 'translateY(0)';
-    }, 300);
-  }, 2200);
-
-
-  revealEls.forEach((el, i) => {
-    el.classList.add('reveal');
-    el.style.transitionDelay = `${i * 0.08}s`;
-  });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    <script>
+    /* ── Grain ── */
+    const canvas = document.getElementById('grain');
+    const ctx = canvas.getContext('2d');
+    function generateGrain() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const imageData = ctx.createImageData(canvas.width, canvas.height);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const value = Math.random() * 255;
+        data[i] = value; data[i+1] = value; data[i+2] = value; data[i+3] = 255;
       }
-    });
-  }, { threshold: 0.15 });
+      ctx.putImageData(imageData, 0, 0);
+    }
+    generateGrain();
+    window.addEventListener('resize', generateGrain);
 
-  revealEls.forEach(el => observer.observe(el));
-    
+    /* ── Pill rotator ── */
+    const roles = ['Designer', 'Artist', 'UX Thinker', 'Maker'];
+    let ri = 0;
+    const pillLabel = document.getElementById('pill-label');
+    setInterval(() => {
+      pillLabel.style.opacity = '0';
+      pillLabel.style.transform = 'translateY(6px)';
+      setTimeout(() => {
+        ri = (ri + 1) % roles.length;
+        pillLabel.textContent = roles[ri];
+        pillLabel.style.opacity = '1';
+        pillLabel.style.transform = 'translateY(0)';
+      }, 300);
+    }, 2200);
+
+    /* ── Reveal on scroll ── */
+    const revealEls = document.querySelectorAll(
+      'h1, .pill, .intro-section p, .works-section, .project-card, .allwork, .contact-option2'
+    );
+    revealEls.forEach((el, i) => {
+      el.classList.add('reveal');
+      el.style.transitionDelay = `${i * 0.08}s`;
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ── Sparkles ── */
     (function() {
-  const colors = ['#d4aaff', '#e0c8ff', '#c4a0f0', '#ede0ff', '#b89ee8'];
+      const colors = ['#d4aaff','#e0c8ff','#c4a0f0','#ede0ff','#b89ee8'];
+      function createSparkle(x, y) {
+        const el = document.createElement('div');
+        const size = Math.random() * 6 + 3;
+        const angle = Math.random() * 360;
+        const dist = Math.random() * 16 + 4;
+        const dur = Math.random() * 700 + 600;
+        Object.assign(el.style, {
+          position: 'fixed', left: x+'px', top: y+'px',
+          width: size+'px', height: size+'px', borderRadius: '50%',
+          background: colors[Math.floor(Math.random()*colors.length)],
+          pointerEvents: 'none', zIndex: 9999,
+          transform: 'translate(-50%,-50%) scale(1)', opacity: 0.55,
+          transition: `transform ${dur}ms ease-out, opacity ${dur}ms ease-out`,
+        });
+        document.body.appendChild(el);
+        const rad = angle * Math.PI / 180;
+        requestAnimationFrame(() => {
+          el.style.transform = `translate(calc(-50% + ${Math.cos(rad)*dist}px), calc(-50% + ${Math.sin(rad)*dist}px)) scale(0)`;
+          el.style.opacity = '0';
+        });
+        setTimeout(() => el.remove(), dur);
+      }
+      let last = 0;
+      document.addEventListener('mousemove', e => {
+        const now = Date.now();
+        if (now - last < 50) return;
+        last = now;
+        createSparkle(e.clientX, e.clientY);
+      });
+    })();
 
-  function createSparkle(x, y) {
-    const el = document.createElement('div');
-    const size = Math.random() * 6 + 3;
-    const angle = Math.random() * 360;
-    const dist  = Math.random() * 16 + 4;
-    const dur   = Math.random() * 700 + 600;
+    /* ════════════════════════════════════════
+       FILMSTRIP — scroll-driven horizontal pan
+       + focal scale
+    ════════════════════════════════════════ */
+    (function() {
+      const section = document.getElementById('filmstripSection');
+      const track   = document.getElementById('filmstripTrack');
+      const cards   = Array.from(track.querySelectorAll('.film-card'));
 
-    Object.assign(el.style, {
-      position: 'fixed',
-      left: x + 'px',
-      top:  y + 'px',
-      width:  size + 'px',
-      height: size + 'px',
-      borderRadius: '50%',
-      background: colors[Math.floor(Math.random() * colors.length)],
-      pointerEvents: 'none',
-      zIndex: 9999,
-      transform: 'translate(-50%, -50%) scale(1)',
-      opacity: 0.55,
-      transition: `transform ${dur}ms ease-out, opacity ${dur}ms ease-out`,
-    });
+      /* How much scroll travel to map across the full track width.
+         We give a generous 2.2× the viewport height as scroll space. */
+      const SCROLL_FACTOR = 2.2;
 
-    document.body.appendChild(el);
+      function update() {
+        const rect      = section.getBoundingClientRect();
+        const sectionH  = section.offsetHeight;
+        /* progress 0 (section top at viewport top) → 1 (section bottom at viewport bottom) */
+        const progress  = Math.max(0, Math.min(1, -rect.top / (sectionH - window.innerHeight)));
 
-    const rad = angle * Math.PI / 180;
-    requestAnimationFrame(() => {
-      el.style.transform = `translate(calc(-50% + ${Math.cos(rad) * dist}px), calc(-50% + ${Math.sin(rad) * dist}px)) scale(0)`;
-      el.style.opacity = '0';
-    });
+        /* Total sideways travel = track scroll width minus viewport */
+        const maxTranslate = track.scrollWidth - window.innerWidth;
+        const translateX   = -(progress * maxTranslate);
+        track.style.transform = `translateX(${translateX}px)`;
 
-    setTimeout(() => el.remove(), dur);
-  }
+        /* Focal scale: card closest to viewport center gets biggest */
+        const vpCenter = window.innerWidth / 2;
+        cards.forEach(card => {
+          const r       = card.getBoundingClientRect();
+          const cardCX  = r.left + r.width / 2;
+          const dist    = Math.abs(cardCX - vpCenter);
+          const maxDist = window.innerWidth * 0.55;
+          const t       = Math.max(0, 1 - dist / maxDist);
+          /* scale ranges 0.82 (far) → 1.10 (center) */
+          const scale   = 0.82 + t * 0.28;
+          card.style.transform = `scale(${scale})`;
+          card.style.zIndex    = Math.round(t * 10);
+          if (t > 0.72) {
+            card.classList.add('is-center');
+          } else {
+            card.classList.remove('is-center');
+          }
+        });
+      }
 
-  let last = 0;
-  document.addEventListener('mousemove', e => {
-    const now = Date.now();
-    if (now - last < 50) return;
-    last = now;
-    createSparkle(e.clientX, e.clientY);
-  });
-})();
-</script>
+      /* Adjust section height so scroll travel equals SCROLL_FACTOR × vh */
+      function resize() {
+        const trackW = track.scrollWidth;
+        /* Height needed: at least enough to scroll the full track + 1 viewport */
+        const needed = (trackW / window.innerWidth) * window.innerHeight * SCROLL_FACTOR;
+        section.style.height = Math.max(needed, window.innerHeight * 1.8) + 'px';
+        update();
+      }
+
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', resize);
+      resize();
+    })();
+      
+      
+      
+        // Modal
+      const contactLink = document.getElementById("contactLink");
+      const modal = document.getElementById("contactModal");
+      const closeModal = document.getElementById("closeModal");
+
+      contactLink.addEventListener("click", function(e) {
+        e.preventDefault();
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+
+      function closeModalFunc() {
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      closeModal.addEventListener("click", closeModalFunc);
+      modal.addEventListener("click", function(e) {
+        if (e.target === modal) closeModalFunc();
+      });
+    </script>
+
+    <footer 
+    >
+      <p style="max-width: none; font-size: 0.9rem; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+        <span>📞 647 765 0711</span>
+        <span>✉️ <a href="mailto:sandysri0711@gmail.com" style="color: white;">sandysri0711@gmail.com</a></span>
+        <span>🔗 <a href="https://www.linkedin.com/in/sandy-srinivasan" target="_blank" style="color: white;">linkedin.com/in/sandy-srinivasan</a></span>
+      </p>
+    </footer>
+
   </body>
 </html>

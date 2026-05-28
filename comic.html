@@ -396,6 +396,32 @@
       }
 
       .container { padding-left:20px; padding-right:20px; }
+      
+      
+      
+      /* ── Metadata pills ── */
+.meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem;
+   margin-left: 30px; /* ← add this */
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: 'Arsenal', sans-serif;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(112, 6, 189, 0.22);
+  background: rgba(202, 169, 255, 0.22);
+  color: #3b224c;
+}
+.pill-icon {
+  font-size: 0.9rem;
+}
     </style>
   </head>
 
@@ -413,12 +439,20 @@
 
       <h1>Comic: RATional Fear </h1>
       <h2>A foe...or a beloved pet?</h2>
-      <p>
-        <b>Challenge:</b> Share an impactful story!
-        <br><b>Tools used: </b>Adobe Photoshop
-        <br><b>Timeframe: </b>March 2026 
-      </p>
+      
+     
+      
+      
+      <p style="margin-top: 1.5rem; margin-bottom: 12px;">
+  <b>Challenge:</b> Share an impactful story! 
+</p>
 
+<div class="meta-pills">
+  <span class="pill"><span class="pill-icon">🛠</span> Adobe Photoshop</span>
+  <span class="pill"><span class="pill-icon">📅</span> March 2026</span>
+ 
+</div>
+     
       <div class="magazine-showcase">
         <button class="controls" id="prevBtn">←</button>
         

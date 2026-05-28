@@ -328,6 +328,80 @@
         margin: 8px 0 0;
         letter-spacing: 0.03em;
       }
+      
+      
+      /* ── At a glance ── */
+.at-a-glance {
+  display: flex;
+  gap: 16px;
+  margin: 2.5rem 0 0;
+  flex-wrap: wrap;
+}
+.glance-card {
+  flex: 1;
+  min-width: 120px;
+  background: rgba(202, 169, 255, 0.22);
+  border: 1px solid rgba(112, 6, 189, 0.18);
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.glance-num {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #3b224c;
+  line-height: 1;
+}
+.glance-label {
+  font-family: 'Arsenal', sans-serif;
+  font-size: 0.88rem;
+  color: #615689;
+  letter-spacing: 0.02em;
+}
+
+/* ── Scoring factors ── */
+.factors-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 1.2rem;
+}
+.factor-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(202, 169, 255, 0.18);
+  border: 1px solid rgba(112, 6, 189, 0.15);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.factor-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(202, 169, 255, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.factor-text strong {
+  display: block;
+  font-family: 'Arsenal', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3b224c;
+}
+.factor-text span {
+  font-family: 'Arsenal', sans-serif;
+  font-size: 0.88rem;
+  color: #615689;
+}
     </style>
   </head>
 
@@ -345,12 +419,27 @@
       <h1>Lumr: Your Environmental Buddy</h1>
 
       <p>
-        <b>Challenge:</b> How might we use design and technology to make climate awareness and sustainable action easier to understand and practice in everyday life?
-        <br><b>Tools used:</b> Figma
-        <br><b>Timeframe:</b> March 2026
-        <br><b>Personal roles:</b> Research, ideation, prototyping one user flow.
-      </p>
+  <b>Challenge:</b> How might we use design and technology to make climate awareness
+  and sustainable action easier to understand and practice in everyday life?
+  <br><b>Tools used:</b> Figma
+  <br><b>Timeframe:</b> March 2026
+  <br><b>Personal roles:</b> Research, ideation, prototyping one user flow.
+</p>
 
+<div class="at-a-glance">
+  <div class="glance-card">
+    <span class="glance-num">4</span>
+    <span class="glance-label">scoring factors</span>
+  </div>
+  <div class="glance-card">
+    <span class="glance-num">2</span>
+    <span class="glance-label">retailers prototyped</span>
+  </div>
+  <div class="glance-card">
+    <span class="glance-num">∞</span>
+    <span class="glance-label">points → rewards</span>
+  </div>
+</div>
 
 
       <h1 id="solution">Our Solution</h1>
@@ -420,12 +509,36 @@
           Lumr is a web browser extension that tracks the contents of a user's shopping cart. It assigns points and ratings
           to the user's cart based on the following four factors:
         </p>
-        <ul>
-          <li>carbon emissions in production</li>
-          <li>Water usage in production</li>
-          <li>average rate of repurchase (for clothing items)</li>
-          <li>average shelf life (for food items)</li>
-        </ul>
+        <div class="factors-grid">
+  <div class="factor-card">
+    <div class="factor-icon">🌫️</div>
+    <div class="factor-text">
+      <strong>Carbon emissions</strong>
+      <span>Measured during production</span>
+    </div>
+  </div>
+  <div class="factor-card">
+    <div class="factor-icon">💧</div>
+    <div class="factor-text">
+      <strong>Water usage</strong>
+      <span>Measured during production</span>
+    </div>
+  </div>
+  <div class="factor-card">
+    <div class="factor-icon">🔁</div>
+    <div class="factor-text">
+      <strong>Repurchase rate</strong>
+      <span>For clothing items</span>
+    </div>
+  </div>
+  <div class="factor-card">
+    <div class="factor-icon">⏳</div>
+    <div class="factor-text">
+      <strong>Average shelf life</strong>
+      <span>For food items</span>
+    </div>
+  </div>
+</div>
         <p>
           Lumr highlights items that bring the user's score down, and offers
           alternatives both within the brand and externally. It provides the user

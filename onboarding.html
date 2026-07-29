@@ -246,11 +246,7 @@ h2 {
         max-height: none;
       }
       
-      a{
-        font-family: Arsenal; 
-        font-size: 1.2em;
-        margin-top: 60px;
-      }
+
       a:hover{
         color: #CAA9FF;
       }
@@ -370,10 +366,7 @@ ul li::before {
       .descript p{
         font-size: 1.2em;
       }
-      ul li{
-        font-family:'Arsenal';
-        font-size: 1.2em;
-      }
+    
       
       
       
@@ -464,11 +457,7 @@ ul li::before {
 
 <div class="topnav">
         <a href="index.html" class="back-btn">&#8249;</a>
-        <div class="nav-links">
-          <a href="index.html">works</a>
-          <a href="#" id="contactLink">contact</a>
-          <a href="https://drive.google.com/file/d/1HFGW0hbcXf2G_oDm0je8TBzVUxFaMJdK/view?usp=sharing" target="_blank">resume</a>
-        </div>
+        
       </div>
    
     <h1>
@@ -556,9 +545,10 @@ ul li::before {
 
   <script>
   const contactLink = document.getElementById("contactLink");
-  const modal = document.getElementById("contactModal");
-  const closeModal = document.getElementById("closeModal");
+const modal = document.getElementById("contactModal");
+const closeModal = document.getElementById("closeModal");
 
+if (contactLink) {
   contactLink.addEventListener("click", function(e) {
     e.preventDefault();
     modal.classList.add("active");
@@ -569,6 +559,7 @@ ul li::before {
   modal.addEventListener("click", function(e) {
     if (e.target === modal) modal.classList.remove("active");
   });
+}
 
   /* Shared image modal — planning, merch, and socials */
   const imageModal = document.getElementById("imageModal");

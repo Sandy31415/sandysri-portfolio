@@ -252,11 +252,7 @@
 
       <div class="topnav">
         <a href="index.html" class="back-btn">&#8249;</a>
-        <div class="nav-links">
-          <a href="index.html">works</a>
-          <a href="#" id="contactLink">contact</a>
-          <a href="https://drive.google.com/file/d/1HFGW0hbcXf2G_oDm0je8TBzVUxFaMJdK/view?usp=sharing" target="_blank">resume</a>
-        </div>
+       
       </div>
 
       <h1>Sunbot: A Health Management Robot</h1>
@@ -357,12 +353,7 @@
         <img src="Research.png" alt="Empathy map and journey research">
       </div>
 
-      <h2>The Screen Interface</h2>
-      <div class="interface">
-        <img src="interface1.png" alt="Screen interface flow map">
-        <img src="interface2.png" alt="Screen interface detail screens">
-      </div>
-
+     
       <p id="link">
         <a href="https://drive.google.com/file/d/1BUKL57vTUx9rRfe6iM2JFRPWn_HO709Q/view?usp=share_link" target="_blank">Check out our full report here</a>
       </p>
@@ -393,13 +384,15 @@
 
     <script>
       // Contact modal
-      const contactLink = document.getElementById("contactLink");
-      const modal = document.getElementById("contactModal");
-      const closeModal = document.getElementById("closeModal");
-      contactLink.addEventListener("click", function(e) { e.preventDefault(); modal.classList.add("active"); });
-      closeModal.addEventListener("click", function() { modal.classList.remove("active"); });
-      modal.addEventListener("click", function(e) { if (e.target === modal) modal.classList.remove("active"); });
-
+      // Contact modal
+const contactLink = document.getElementById("contactLink");
+const modal = document.getElementById("contactModal");
+const closeModal = document.getElementById("closeModal");
+if (contactLink) {
+  contactLink.addEventListener("click", function(e) { e.preventDefault(); modal.classList.add("active"); });
+  closeModal.addEventListener("click", function() { modal.classList.remove("active"); });
+  modal.addEventListener("click", function(e) { if (e.target === modal) modal.classList.remove("active"); });
+}
       // Image modal
       const planningImages = document.querySelectorAll(".planning img");
       const imageModal = document.getElementById("imageModal");
